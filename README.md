@@ -13,5 +13,5 @@ flux bootstrap github \
 Reconcile after upgrade:
 
 ```bash
-flux reconcile source git flux-system
+flux reconcile kustomization flux-system --with-source
 ```
