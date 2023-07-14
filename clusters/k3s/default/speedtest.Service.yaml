@@ -1,9 +1,10 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: speedtest
   labels:
     app: speedtest
+  name: speedtest
+  namespace: default
 spec:
   selector:
     app: speedtest
