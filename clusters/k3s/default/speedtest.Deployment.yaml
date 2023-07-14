@@ -15,6 +15,9 @@ spec:
       containers:
         - name: speedtest
           image: docker.io/miguelndecarvalho/speedtest-exporter:v3.5.4
+          ports:
+            - name: http
+              containerPort: 9798
           securityContext:
             allowPrivilegeEscalation: false
             capabilities:

@@ -1,0 +1,14 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: speedtest
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: speedtest
+  endpoints:
+    - port: http
+  namespaceSelector:
+    matchNames:
+      - default
