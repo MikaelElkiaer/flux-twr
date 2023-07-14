@@ -16,4 +16,4 @@ spec:
       interval: 1m
   values:
     image:
-      tag: v2.9.8 # {"$imagepolicy": "flux-system:traefik:tag"}
+      tag: 2.10.3 # {"$imagepolicy": "flux-system:traefik:tag"}
