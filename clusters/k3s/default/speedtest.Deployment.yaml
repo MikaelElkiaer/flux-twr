@@ -19,5 +19,6 @@ spec:
             allowPrivilegeEscalation: false
             capabilities:
               drop: ["ALL", "NET_RAW"]
+            runAsUser: 1001
       securityContext:
         runAsNonRoot: true
