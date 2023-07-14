@@ -8,6 +8,9 @@ spec:
     matchLabels:
       app: speedtest
   template:
+    metadata:
+      labels:
+        app: speedtest
     spec:
       containers:
         - name: speedtest
