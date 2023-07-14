@@ -8,4 +8,4 @@ spec:
     name: traefik
   policy:
     semver:
-      range: 2.x.x
+      range: v2.x.x
