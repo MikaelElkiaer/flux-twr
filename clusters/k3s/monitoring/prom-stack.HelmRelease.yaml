@@ -8,11 +8,13 @@ spec:
   chart:
     spec:
       chart: kube-prometheus-stack
-      version: ^48.x.x
+      version: 48.x.x
       sourceRef:
         kind: HelmRepository
         name: prometheus-community
         namespace: flux-system
+  upgrade:
+    crds: CreateReplace
   values:
     prometheus:
       prometheusSpec:

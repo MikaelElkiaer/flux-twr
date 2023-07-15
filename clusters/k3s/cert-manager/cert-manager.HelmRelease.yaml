@@ -13,5 +13,7 @@ spec:
         kind: HelmRepository
         name: jetstack
         namespace: flux-system
+  upgrade:
+    crds: CreateReplace
   values:
     installCRDs: true 

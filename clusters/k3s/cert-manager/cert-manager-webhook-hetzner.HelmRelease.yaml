@@ -15,5 +15,7 @@ spec:
         namespace: flux-system
   dependsOn:
     - name: cert-manager
+  upgrade:
+    crds: CreateReplace
   values:
     groupName: elkiaer.net
