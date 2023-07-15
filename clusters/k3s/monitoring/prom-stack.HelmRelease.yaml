@@ -16,6 +16,17 @@ spec:
   upgrade:
     crds: CreateReplace
   values:
+    grafana:
+      ingress:
+        enabled: true
+        annotations:
+          cert-manager.io/cluster-issuer: letsencrypt-staging
+        hosts:
+          - grafana.home.elkiaer.net
+        tls:
+          - secretName: net-elkiaer-home-grafana
+            hosts:
+              - grafana.home.elkiaer.net
     prometheus:
       prometheusSpec:
         storageSpec:
