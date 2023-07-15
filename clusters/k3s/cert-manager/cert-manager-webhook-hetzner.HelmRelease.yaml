@@ -13,5 +13,7 @@ spec:
         kind: HelmRepository
         name: cert-manager-webhook-hetzner
         namespace: flux-system
+  dependsOn:
+    - name: cert-manager
   values:
     groupName: elkiaer.net
