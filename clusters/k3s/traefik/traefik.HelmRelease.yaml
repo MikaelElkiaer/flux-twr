@@ -4,7 +4,7 @@ metadata:
   name: traefik
   namespace: traefik
 spec:
-  interval: 5m
+  interval: 10m
   chart:
     spec:
       chart: traefik
@@ -13,7 +13,6 @@ spec:
         kind: HelmRepository
         name: traefik
         namespace: flux-system
-      interval: 1m
   values:
     image:
       tag: 2.10.3 # {"$imagepolicy": "flux-system:traefik:tag"}
