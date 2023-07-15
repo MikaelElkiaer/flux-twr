@@ -1,0 +1,14 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: net-elkiaer
+  namespace: cert-manager
+spec:
+  commonName: "elkiaer.net"
+  dnsNames:
+    - elkiaer.net
+    - "*.elkiaer.net"
+  issuerRef:
+    name: letsencrypt-staging
+    kind: ClusterIssuer
+  secretName: net-elkiaer
