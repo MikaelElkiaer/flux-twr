@@ -17,4 +17,4 @@ spec:
     crds: CreateReplace
   values:
     image:
-      tag: 2.10.3 # {"$imagepolicy": "flux-system:traefik:tag"}
+      tag: 2.10.4 # {"$imagepolicy": "flux-system:traefik:tag"}
