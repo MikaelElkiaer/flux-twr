@@ -5,8 +5,8 @@ metadata:
   namespace: flux-system
 spec:
   dependsOn:
-    - cert-manager-controller
-    - sealed-secrets
+    - name: cert-manager-controller
+    - name: sealed-secrets
   interval: 10m
   path: ./clusters/k3s/cert-manager/certs
   prune: true
