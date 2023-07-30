@@ -1,16 +1,16 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: sealed-secrets
+  name: cert-manager-controller
   namespace: flux-system
 spec:
   healthChecks:
-    - apiVersion: apps/v1
-      kind: Deployment
-      name: sealed-secrets
-      namespace: sealed-secrets
+    - apiVersion: helm.toolkit.fluxcd.io/v2beta1
+      kind: HelmRelease
+      name: cert-manager
+      namespace: cert-manager
   interval: 10m
-  path: ./clusters/k3s/kube-system/sealed-secrets
+  path: ./clusters/k3s/cert-manager/controller
   prune: true
   sourceRef:
     kind: GitRepository
