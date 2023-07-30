@@ -21,7 +21,7 @@ flux create source git flux-system --branch=main --url=ssh://git@github.com/Mika
 The root component to watch and apply source changes to cluster.
 
 ```bash
-flux create kustomization flux-system --path="clusters/k3s" --source=flux-system --prune=true
+flux create kustomization flux-system --path="clusters/k3s/flux-system" --source=flux-system --prune=true
 ```
 
 ## Triggering an update
