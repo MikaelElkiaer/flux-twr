@@ -15,7 +15,7 @@ spec:
       containers:
         - env:
            - name: SPEEDTEST_PORT
-             value: 9798
+             value: "9798"
           name: speedtest
           image: docker.io/miguelndecarvalho/speedtest-exporter:v3.5.4
           ports:
