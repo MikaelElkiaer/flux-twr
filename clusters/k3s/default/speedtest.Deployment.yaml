@@ -26,5 +26,12 @@ spec:
             capabilities:
               drop: ["ALL", "NET_RAW"]
             runAsUser: 1001
+          volumeMounts:
+            - mountPath: /.config
+              name: config
       securityContext:
         runAsNonRoot: true
+      volumes:
+        - name: config
+          emptyDir:
+            sizeLimit: 50Mi
