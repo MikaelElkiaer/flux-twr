@@ -10,7 +10,7 @@ spec:
       name: cert-manager
       namespace: cert-manager
   interval: 10m
-  path: ./cert-manager/controller
+  path: ./clusters/k3s/cert-manager/controller
   prune: true
   sourceRef:
     kind: GitRepository

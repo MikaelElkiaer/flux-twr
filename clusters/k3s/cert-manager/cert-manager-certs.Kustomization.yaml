@@ -8,7 +8,7 @@ spec:
     - cert-manager-controller
     - sealed-secrets
   interval: 10m
-  path: ./cert-manager/certs
+  path: ./clusters/k3s/cert-manager/certs
   prune: true
   sourceRef:
     kind: GitRepository
