@@ -1,6 +1,8 @@
 kind: Service
 apiVersion: v1
 metadata:
+  labels:
+    app: speedtest
   name: speedtest
   namespace: default
 spec:
