@@ -11,4 +11,4 @@ spec:
   ports:
     - name: http
       port: 9798
-      targetPort: 9798
+      targetPort: http
