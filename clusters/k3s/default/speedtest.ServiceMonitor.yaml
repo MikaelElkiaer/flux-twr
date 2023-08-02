@@ -6,12 +6,13 @@ metadata:
   name: speedtest
   namespace: default
 spec:
-  selector:
-    matchLabels:
-      app: speedtest
   endpoints:
-    - port: http
-      interval: 5m
+    - interval: 5m
+      port: http
+      scrapeTimeout: 1m
   namespaceSelector:
     matchNames:
       - default
+  selector:
+    matchLabels:
+      app: speedtest
