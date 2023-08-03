@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: zigbee2mqtt
+data:
+  configuration.yaml: |-
+    homeassistant: true
+    permit_join: true
+    mqtt:
+      base_topic: zigbee2mqtt
+      server: mqtt://mosquitto
+      keepalive: 60
+      reject_unauthorized: true
+      version: 4
+    serial:
+      port: /dev/ttyACM0
+    advanced:
+      homeassistant_legacy_entity_attributes: false
+      legacy_api: false
+      legacy_availability_payload: false
+    device_options:
+      legacy: false
+    frontend:
+      port: 8080
+
+    ## Map devices to persistent /data directory
+    devices: /data/devices.yaml
+    groups: /data/groups.yaml
