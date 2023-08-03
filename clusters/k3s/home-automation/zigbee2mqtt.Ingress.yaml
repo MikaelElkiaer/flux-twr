@@ -6,7 +6,8 @@ metadata:
     cert-manager.io/cluster-issuer: letsencrypt-staging
 spec:
   rules:
-    - http:
+    - host: z2mqtt.home.elkiaer.net
+      http:
         paths:
           - path: /
             pathType: Prefix
