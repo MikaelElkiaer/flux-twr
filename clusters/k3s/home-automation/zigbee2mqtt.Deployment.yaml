@@ -71,4 +71,4 @@ spec:
             path: /dev/serial/by-id/usb-ITEAD_SONOFF_Zigbee_3.0_USB_Dongle_Plus_V2_20221101110016-if00
         - name: zigbee2mqtt-config
           configMap:
-            name: zigbee2mqtt-config
+            name: zigbee2mqtt
