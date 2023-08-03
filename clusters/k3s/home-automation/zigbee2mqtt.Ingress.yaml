@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: zigbee2mqtt
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-staging
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: zigbee2mqtt
+                port:
+                  name: http
+  tls:
+    - hosts:
+        - z2mqtt.home.elkiaer.net
+      secretName: net-elkiaer-home-z2mqtt
