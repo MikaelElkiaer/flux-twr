@@ -21,6 +21,14 @@ data:
 
     opnsense: !include opnsense.yaml
 
+    homeassistant:
+      auth_providers:
+        - type: trusted_networks
+          trusted_networks:
+            - 192.168.1.0/24
+            - 127.0.0.1
+          allow_bypass_login: true
+
     http:
       server_port: 8123
       use_x_forwarded_for: true
@@ -84,7 +92,6 @@ data:
               - b64:AAAACQAAAEsAZgUyAGYFMgBmG4cAZgUyAGYKygBmCsoAZgrKAGYKygBmCsoAZgrKAGYKygBmCsoAZhBaAGYKygBmBTIAZhBaAGYKygBmBTIAZgrKAGYQWgBmFe8AZj0TAGYFMgBmBTIAZhuHAGYFMgBmCsoAZgrKAGYKygBmCsoAZgrKAGYKygBmCsoAZgrKAGYKygBmEFoAZgrKAGYKygBmCsoAZgUyAGYKygBmEFoAZhXvAGYFMgBmBTIAZhuHAGYFMgBmCsoAZgrKAGYKygBmCsoAZgrKAGYKygBmCsoAZgrKAGYKygBmEFoAZgrKAGYKygBmCsoAZgUyAGYKygBmEFoAZhXvAGYFMgBmBTIAZhuHAGYFMgBmCsoAZgrKAGYKygBmCsoAZgrKAGYKygBmAGY
     lk_fuga_4:
       sequence:
-            command:
         - service: remote.send_command
           target:
             entity_id: remote.kitchen
