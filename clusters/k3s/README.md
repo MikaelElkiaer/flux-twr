@@ -36,3 +36,11 @@ sudo iptables -t nat -A PREROUTING -i enp3s0 -p tcp --dport 80 -j REDIRECT --to-
 sudo iptables -t nat -A PREROUTING -i enp3s0 -p tcp --dport 443 -j REDIRECT --to-port 10443
 sudo iptables-save -f /etc/iptables/iptables.rules
 ```
+
+## Set up for home assistant
+
+```bash
+cat <<EOF | sudo tee /etc/udev/rules.d/99-perm.rules
+SUBSYSTEM=="usb", ATTRS{serial}=="20221101110016", OWNER="me"
+EOF
+```
