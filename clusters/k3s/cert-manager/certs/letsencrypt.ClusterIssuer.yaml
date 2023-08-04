@@ -1,0 +1,20 @@
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: letsencrypt
+spec:
+  acme:
+    server: https://acme-v02.api.letsencrypt.org/directory
+    email: letsencrypt@elkiaer.net
+    privateKeySecretRef:
+      name: letsencrypt
+    solvers:
+      - dns01:
+          webhook:
+            # This group needs to be configured when installing the helm package, otherwise the webhook won't have permission to create an ACME challenge for this API group.
+            groupName: elkiaer.net
+            solverName: hetzner
+            config:
+              secretName: hetzner-secret
+              zoneName: elkiaer.net # (Optional): When not provided the Zone will searched in Hetzner API by recursion on full domain name
+              apiUrl: https://dns.hetzner.com/api/v1

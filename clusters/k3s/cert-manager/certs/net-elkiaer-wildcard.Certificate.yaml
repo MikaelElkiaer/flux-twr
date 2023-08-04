@@ -9,6 +9,6 @@ spec:
     - elkiaer.net
     - "*.elkiaer.net"
   issuerRef:
-    name: letsencrypt-staging
+    name: letsencrypt
     kind: ClusterIssuer
   secretName: net-elkiaer

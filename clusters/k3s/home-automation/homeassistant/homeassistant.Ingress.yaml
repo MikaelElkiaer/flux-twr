@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: homeassistant
   annotations:
-    cert-manager.io/cluster-issuer: letsencrypt-staging
+    cert-manager.io/cluster-issuer: letsencrypt
 spec:
   rules:
     - host: ha.home.elkiaer.net
