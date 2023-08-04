@@ -23,6 +23,7 @@ data:
 
     homeassistant:
       auth_providers:
+        - type: homeassistant
         - type: trusted_networks
           trusted_networks:
             - 192.168.1.0/24
