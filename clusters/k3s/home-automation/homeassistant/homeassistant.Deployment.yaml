@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: homeassistant
+  name: homeassistant
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: homeassistant
+  template:
+    metadata:
+      labels:
+        app: homeassistant
+    spec:
+      containers:
+        - name: homeassistant
+          image: ghcr.io/home-assistant/home-assistant:2023.8.0
+          env:
+            - name: TZ
+              value: Europe/Copenhagen
+          ports:
+            - name: http
+              containerPort: 8123
+          volumeMounts:
+            - name: homeassistant-appdata
+              mountPath: /config
+            - name: homeassistant-configuration
+              mountPath: /config/configuration.yaml
+              readOnly: true
+              subPath: configuration.yaml
+            - name: homeassistant-opnsense
+              mountPath: /config/opnsense.yaml
+              readOnly: true
+              subPath: opnsense.yaml
+            - name: homeassistant-scripts
+              mountPath: /config/scripts.yaml
+              readOnly: true
+              subPath: scripts.yaml
+      volumes:
+        - name: homeassistant-appdata
+          hostPath:
+            name: homeassistant
+            path: /home/me/Appdata/homeassistant
+        - name: homeassistant-opnsense
+          secret:
+            secretName: homeassistant-opnsense

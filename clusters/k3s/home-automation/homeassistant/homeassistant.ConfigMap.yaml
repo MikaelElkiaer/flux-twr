@@ -1,0 +1,94 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: homeassistant
+data:
+  configuration.yaml: |-
+    # Loads default set of integrations. Do not remove.
+    default_config:
+
+    # Load frontend themes from the themes folder
+    frontend:
+      themes: !include_dir_merge_named themes
+
+    # Text to speech
+    tts:
+      - platform: google_translate
+
+    automation: !include automations.yaml
+    script: !include scripts.yaml
+    scene: !include scenes.yaml
+
+    opnsense: !include opnsense.yaml
+
+    http:
+      server_port: 8123
+      use_x_forwarded_for: true
+      trusted_proxies:
+      - 10.42.0.0/16
+  scripts.yaml: |-
+    emhaette_power:
+      sequence:
+        - service: remote.send_command
+          target:
+            entity_id: remote.kitchen
+          data:
+            command: b64:JgAYAAbsB+wH6wjrCJoImgebB5sHmwWcCAANBQ==
+    emhaette_light:
+      sequence:
+        - service: remote.send_command
+          target:
+            entity_id: remote.kitchen
+          data:
+            command: b64:JgA0AAfrCOsG7QfrCOsImgjrB+wHmweaCJsFAAX8B+sI7AfsB+sH7AeaCOwF7geaB5sImgcADQU=
+    emhaette_sug_juster:
+      sequence:
+        - service: remote.send_command
+          target:
+            entity_id: remote.kitchen
+          data:
+            command: b64:JgAaAAfrCOsH7AfrCOsHmgmaB+sImgiaB5sIAA0F
+    emhaette_sug_max:
+      sequence:
+        - service: remote.send_command
+          target:
+            entity_id: remote.kitchen
+          data:
+            command: b64:JgA0AAjqCJsH6wfsCOoJmgfsB5oImgiaCJoHAAadB+wHmgjsB+sH7AeaCesHmgiaCJoHmwgADQU=
+    lk_fuga_1:
+      sequence:
+        - service: remote.send_command
+          target:
+            entity_id: remote.kitchen
+          data:
+            command:
+              - b64:AAAACQAAABYAZwUyAGcFMgBnG4cAZwUyAGcKygBnCsoAZwrKAGcQWQBnCsoAZwUyAGcQWQBnCsoAZwrKAGcFMgBnCsoAZxBZAGcKygBnBTIAZxBZAGcKygBnFe8AZwBn
+              - b64:AAAACQAAAEwAZgUyAGYFMgBmG4QAZgUyAGYKygBmCsoAZgrKAGYKygBmCsoAZgrKAGYKygBmCsoAZhBiAGYKygBmBTIAZhBiAGYFMgBmEGIAZgUyAGYQYgBmFfIAZj0TAGYFMgBmBTIAZhuEAGYFMgBmCsoAZgrKAGYKygBmCsoAZgrKAGYKygBmCsoAZgrKAGYKygBmEGIAZgrKAGYKygBmBTIAZhBiAGYKygBmBTIAZhXyAGYFMgBmBTIAZhuEAGYFMgBmCsoAZgrKAGYKygBmCsoAZgrKAGYKygBmCsoAZgrKAGYKygBmEGIAZgrKAGYKygBmBTIAZhBiAGYKygBmBTIAZhXyAGYFMgBmBTIAZhuEAGYFMgBmCsoAZgrKAGYKygBmCsoAZgrKAGYKygBmCsoAZgBm
+    lk_fuga_2:
+      sequence:
+        - service: remote.send_command
+          target:
+            entity_id: remote.kitchen
+          data:
+            command:
+              - b64:AAAACQAAABYAZwUyAGcFMgBnG4cAZwUyAGcKygBnCsoAZwrKAGcQWQBnCsoAZwUyAGcQWQBnCsoAZwrKAGcFMgBnCsoAZxBZAGcKygBnBTIAZxBZAGcKygBnFe8AZwBn
+              - b64:AAAACQAAAE0AZgUyAGYFMgBmG40AZgUyAGYKygBmCsoAZgrKAGYKygBmCsoAZgrKAGYKygBmCsoAZhBgAGYKygBmBTIAZhBgAGYFMgBmEGAAZgUyAGYKygBmFe8AZjHcAGYFMgBmBTIAZhuNAGYFMgBmCsoAZgrKAGYKygBmCsoAZgrKAGYKygBmCsoAZgrKAGYKygBmEGAAZgrKAGYKygBmBTIAZhBgAGYKygBmCsoAZhXvAGYFMgBmBTIAZhuNAGYFMgBmCsoAZgrKAGYKygBmCsoAZgrKAGYKygBmCsoAZgrKAGYKygBmEGAAZgrKAGYKygBmBTIAZhBgAGYKygBmCsoAZhXvAGYFMgBmBTIAZhuNAGYFMgBmCsoAZgrKAGYKygBmCsoAZgrKAGYKygBmCsoAZgrKAGYAZg
+    lk_fuga_3:
+      sequence:
+        - service: remote.send_command
+          target:
+            entity_id: remote.kitchen
+          data:
+            command:
+              - b64:AAAACQAAABYAZwUyAGcFMgBnG4cAZwUyAGcKygBnCsoAZwrKAGcQWQBnCsoAZwUyAGcQWQBnCsoAZwrKAGcFMgBnCsoAZxBZAGcKygBnBTIAZxBZAGcKygBnFe8AZwBn
+              - b64:AAAACQAAAEsAZgUyAGYFMgBmG4cAZgUyAGYKygBmCsoAZgrKAGYKygBmCsoAZgrKAGYKygBmCsoAZhBaAGYKygBmBTIAZhBaAGYKygBmBTIAZgrKAGYQWgBmFe8AZj0TAGYFMgBmBTIAZhuHAGYFMgBmCsoAZgrKAGYKygBmCsoAZgrKAGYKygBmCsoAZgrKAGYKygBmEFoAZgrKAGYKygBmCsoAZgUyAGYKygBmEFoAZhXvAGYFMgBmBTIAZhuHAGYFMgBmCsoAZgrKAGYKygBmCsoAZgrKAGYKygBmCsoAZgrKAGYKygBmEFoAZgrKAGYKygBmCsoAZgUyAGYKygBmEFoAZhXvAGYFMgBmBTIAZhuHAGYFMgBmCsoAZgrKAGYKygBmCsoAZgrKAGYKygBmAGY
+    lk_fuga_4:
+      sequence:
+            command:
+        - service: remote.send_command
+          target:
+            entity_id: remote.kitchen
+          data:
+            command:
+              - b64:AAAACQAAABYAZwUyAGcFMgBnG4cAZwUyAGcKygBnCsoAZwrKAGcQWQBnCsoAZwUyAGcQWQBnCsoAZwrKAGcFMgBnCsoAZxBZAGcKygBnBTIAZxBZAGcKygBnFe8AZwBn
+              - b64:AAAACQAAAE4AZgUyAGYFMgBmG4QAZgUyAGYKygBmCsoAZgrKAGYKygBmCsoAZgrKAGYKygBmCsoAZhBcAGYKygBmBTIAZhBcAGYKygBmBTIAZgrKAGYKygBmFe8AZjHiAGYFMgBmBTIAZhuEAGYFMgBmCsoAZgrKAGYKygBmCsoAZgrKAGYKygBmCsoAZgrKAGYKygBmEFwAZgrKAGYKygBmCsoAZgUyAGYKygBmCsoAZhXvAGYFMgBmBTIAZhuEAGYFMgBmCsoAZgrKAGYKygBmCsoAZgrKAGYKygBmCsoAZgrKAGYKygBmEFwAZgrKAGYKygBmCsoAZgUyAGYKygBmCsoAZhXvAGYFMgBmBTIAZhuEAGYFMgBmCsoAZgrKAGYKygBmCsoAZgrKAGYKygBmCsoAZgrKAGYKygBmAGY
