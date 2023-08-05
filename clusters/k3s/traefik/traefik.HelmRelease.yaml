@@ -48,6 +48,10 @@ spec:
     ports:
       web:
         redirectTo: websecure
+      webSecure:
+        proxyProtocol:
+          trustedIPs:
+            - 10.42.0.0/16
     service:
       spec:
         externalTrafficPolicy: Local
