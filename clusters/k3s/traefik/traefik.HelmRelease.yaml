@@ -48,7 +48,7 @@ spec:
     ports:
       web:
         redirectTo: websecure
-      webSecure:
+      websecure:
         proxyProtocol:
           trustedIPs:
             - 10.42.0.0/16
