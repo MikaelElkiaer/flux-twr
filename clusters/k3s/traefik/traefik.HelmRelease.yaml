@@ -23,10 +23,6 @@ spec:
         volumeMounts:
           - name: access-logs
             mountPath: /var/log/traefik
-    additionalVolumes:
-      - name: access-logs
-        emptyDir:
-          sizeLimit: 100Mi
     additionalVolumeMounts:
       - name: access-logs
         mountPath: /var/log/traefik
@@ -38,3 +34,7 @@ spec:
     ports:
       web:
         redirectTo: websecure
+    volumes:
+      - name: access-logs
+        emptyDir:
+          sizeLimit: 100Mi
