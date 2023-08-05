@@ -36,9 +36,15 @@ spec:
     logs:
       access:
         enabled: true
+        fields:
+          headers:
+            defaultmode: keep
         filePath: /var/log/traefik/access.log
         filters:
           minduration: 1ms
+        format: json
+      general:
+        format: json
     ports:
       web:
         redirectTo: websecure
