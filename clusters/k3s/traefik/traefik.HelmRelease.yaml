@@ -16,17 +16,17 @@ spec:
   upgrade:
     crds: CreateReplace
   values:
-    additionalContainers:
-      - name: access-logger
-        image: alpine
-        command: ["tail", "-F", "/var/log/traefik/access.log"]
-        volumeMounts:
-          - name: access-logs
-            mountPath: /var/log/traefik
     additionalVolumeMounts:
       - name: access-logs
         mountPath: /var/log/traefik
     deployment:
+      additionalContainers:
+        - name: access-logger
+          image: alpine
+          command: ["tail", "-F", "/var/log/traefik/access.log"]
+          volumeMounts:
+            - name: access-logs
+              mountPath: /var/log/traefik
       additionalVolumes:
         - name: access-logs
           emptyDir:
@@ -36,6 +36,9 @@ spec:
     logs:
       access:
         enabled: true
+        filePath: /var/log/traefik/access.log
+        filters:
+          minduration: 1ms
     ports:
       web:
         redirectTo: websecure
