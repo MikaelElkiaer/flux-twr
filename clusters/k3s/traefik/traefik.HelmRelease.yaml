@@ -16,8 +16,25 @@ spec:
   upgrade:
     crds: CreateReplace
   values:
+    additionalContainers:
+      - name: access-logger
+        image: alpine
+        command: ["tail", "-F", "/var/log/traefik/access.log"]
+        volumeMounts:
+          - name: access-logs
+            mountPath: /var/log/traefik
+    additionalVolumes:
+      - name: access-logs
+        emptyDir:
+          sizeLimit: 100Mi
+    additionalVolumeMounts:
+      - name: access-logs
+        mountPath: /var/log/traefik
     image:
       tag: 2.10.4 # {"$imagepolicy": "flux-system:traefik:tag"}
+    logs:
+      access:
+        enabled: true
     ports:
       web:
         redirectTo: websecure
