@@ -48,3 +48,8 @@ spec:
     ports:
       web:
         redirectTo: websecure
+      websecure:
+        forwardedHeaders:
+          trustedIPs:
+            - 10.42.0.0/16
+            - 192.168.1.0/24
