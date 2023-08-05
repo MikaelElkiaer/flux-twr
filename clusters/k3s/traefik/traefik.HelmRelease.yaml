@@ -31,7 +31,6 @@ spec:
         - name: access-logs
           emptyDir:
             sizeLimit: 100Mi
-    hostNetwork: true
     image:
       tag: 2.10.4 # {"$imagepolicy": "flux-system:traefik:tag"}
     logs:
@@ -50,6 +49,9 @@ spec:
       web:
         redirectTo: websecure
       websecure:
+        forwardedHeaders:
+          trustedIPs:
+            - 10.42.0.0/16
         proxyProtocol:
           trustedIPs:
             - 10.42.0.0/16
