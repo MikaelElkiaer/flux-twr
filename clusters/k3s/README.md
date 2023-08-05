@@ -35,6 +35,12 @@ systemctl --user enable --now k3s-rootless.service
 sudo iptables -t nat -A PREROUTING -i enp3s0 -p tcp --dport 80 -j REDIRECT --to-port 10080
 sudo iptables -t nat -A PREROUTING -i enp3s0 -p tcp --dport 443 -j REDIRECT --to-port 10443
 sudo iptables-save -f /etc/iptables/iptables.rules
+
+# Enable ip forwarding
+cat <<EOF | sudo tee /etc/sysctl.conf
+net.ipv4.ip_forward=1
+net.ipv6.conf.all.forwarding=1
+EOF
 ```
 
 ## Set up for home assistant
