@@ -32,6 +32,10 @@ EOF
 systemctl daemon-reload
 systemctl --user enable --now k3s-rootless.service
 
+# Allow service start on host startup
+# - otherwise service will start/stop with user login/logout
+sudo loginctl enable-linger $USERNAME
+
 # Configure port forward rules and persist
 sudo iptables -t nat -A PREROUTING -i enp3s0 -p tcp --dport 80 -j REDIRECT --to-port 10080
 sudo iptables -t nat -A PREROUTING -i enp3s0 -p tcp --dport 443 -j REDIRECT --to-port 10443
