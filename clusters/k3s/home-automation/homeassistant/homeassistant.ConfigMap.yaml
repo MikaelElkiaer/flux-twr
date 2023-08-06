@@ -19,7 +19,10 @@ data:
     script: !include scripts.yaml
     scene: !include scenes.yaml
 
-    opnsense: !include opnsense.yaml
+    opnsense:
+      api_key: !secret opnsense__api_key
+      api_secret: !secret opnsense__api_secret
+      url: https://192.168.1.1/api
 
     homeassistant:
       auth_providers:
