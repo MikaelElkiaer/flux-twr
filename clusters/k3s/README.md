@@ -23,7 +23,8 @@ EOF
 cat <<EOF | sudo tee /etc/rancher/k3s/config.yaml
 cluster-init: true
 disable-helm-controller: true
-disable: traefik
+disable:
+  - traefik
 write-kubeconfig-mode: "0700"
 EOF
 
@@ -46,7 +47,8 @@ EOF
 ## Set up for home assistant
 
 ```bash
+# Give user ownershop over Zigbee USB dongle
 cat <<EOF | sudo tee /etc/udev/rules.d/99-perm.rules
-SUBSYSTEM=="usb", ATTRS{serial}=="20221101110016", OWNER="me"
+SUBSYSTEM=="usb", ATTRS{serial}=="20221101110016", OWNER="$USER"
 EOF
 ```
