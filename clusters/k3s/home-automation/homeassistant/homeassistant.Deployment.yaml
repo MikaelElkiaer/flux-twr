@@ -30,10 +30,10 @@ spec:
               mountPath: /config/configuration.yaml
               readOnly: true
               subPath: configuration.yaml
-            - name: homeassistant-opnsense
-              mountPath: /config/opnsense.yaml
+            - name: homeassistant-secrets
+              mountPath: /config/secrets.yaml
               readOnly: true
-              subPath: opnsense.yaml
+              subPath: secrets.yaml
             - name: homeassistant-configuration
               mountPath: /config/scripts.yaml
               readOnly: true
@@ -46,6 +46,6 @@ spec:
         - name: homeassistant-configuration
           configMap:
             name: homeassistant
-        - name: homeassistant-opnsense
+        - name: homeassistant-secrets
           secret:
-            secretName: homeassistant-opnsense
+            secretName: homeassistant-secrets
