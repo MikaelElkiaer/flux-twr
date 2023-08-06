@@ -5,7 +5,7 @@
 sudo pacman -S --noconfirm curl fuse3
 
 # Download k3s binary and make it executable
-sudo curl -Lo /usr/local/bin/k3s https://github.com/k3s-io/k3s/releases/download/v1.26.5+k3s1/k3s
+sudo curl -Lo /usr/local/bin/k3s https://github.com/k3s-io/k3s/releases/download/v1.27.4+k3s1/k3s
 sudo chmod a+x /usr/local/bin/k3s
 
 # Create rootless service for local user
