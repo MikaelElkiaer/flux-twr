@@ -49,15 +49,19 @@ spec:
       web:
         forwardedHeaders:
           trustedIPs:
+            - 10.41.0.0/16
             - 10.42.0.0/16
         proxyProtocol:
           trustedIPs:
+            - 10.41.0.0/16
             - 10.42.0.0/16
         redirectTo: websecure
       websecure:
         forwardedHeaders:
           trustedIPs:
+            - 10.41.0.0/16
             - 10.42.0.0/16
         proxyProtocol:
           trustedIPs:
+            - 10.41.0.0/16
             - 10.42.0.0/16
