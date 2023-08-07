@@ -1,17 +1,18 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: cert-manager-controller
+  name: monitoring
   namespace: flux-system
 spec:
   healthChecks:
     - apiVersion: helm.toolkit.fluxcd.io/v2beta1
       kind: HelmRelease
-      name: cert-manager
-      namespace: cert-manager
+      name: prom-stack
+      namespace: monitoring
   interval: 10m
-  path: ./clusters/k3s/cert-manager/controller
+  path: ./monitoring
   prune: true
   sourceRef:
     kind: GitRepository
     name: flux-system
+  targetNamespace: monitoring

@@ -4,7 +4,6 @@ metadata:
   labels:
     app: speedtest
   name: speedtest
-  namespace: default
 spec:
   selector:
     matchLabels:
