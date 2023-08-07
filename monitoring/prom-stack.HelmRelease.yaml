@@ -26,6 +26,10 @@ spec:
           - secretName: net-elkiaer-home-grafana
             hosts:
               - grafana.home.elkiaer.net
+      sidecar:
+        dashboards:
+          labelValue: "1"
+          searchNamespace: "ALL"
     prometheus:
       prometheusSpec:
         storageSpec:
