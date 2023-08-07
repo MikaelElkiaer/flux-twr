@@ -8,54 +8,14 @@ data:
   # Source: https://grafana.com/grafana/dashboards/13665-speedtest-exporter-dashboard/
   speedtest-dashboard.json: |-
     {
-      "__inputs": [
-        {
-          "name": "DS_PROMETHEUS",
-          "label": "Prometheus",
-          "description": "",
-          "type": "datasource",
-          "pluginId": "prometheus",
-          "pluginName": "Prometheus"
-        }
-      ],
-      "__elements": [],
-      "__requires": [
-        {
-          "type": "panel",
-          "id": "gauge",
-          "name": "Gauge",
-          "version": ""
-        },
-        {
-          "type": "grafana",
-          "id": "grafana",
-          "name": "Grafana",
-          "version": "8.4.3"
-        },
-        {
-          "type": "datasource",
-          "id": "prometheus",
-          "name": "Prometheus",
-          "version": "1.0.0"
-        },
-        {
-          "type": "panel",
-          "id": "stat",
-          "name": "Stat",
-          "version": ""
-        },
-        {
-          "type": "panel",
-          "id": "timeseries",
-          "name": "Time series",
-          "version": ""
-        }
-      ],
       "annotations": {
         "list": [
           {
             "builtIn": 1,
-            "datasource": "-- Grafana --",
+            "datasource": {
+              "type": "datasource",
+              "uid": "grafana"
+            },
             "enable": true,
             "hide": true,
             "iconColor": "rgba(0, 211, 255, 1)",
@@ -75,12 +35,15 @@ data:
       "fiscalYearStartMonth": 0,
       "gnetId": 13665,
       "graphTooltip": 0,
-      "id": null,
-      "iteration": 1650287799671,
+      "id": 29,
       "links": [],
       "liveNow": false,
       "panels": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
           "description": "",
           "fieldConfig": {
             "defaults": {
@@ -143,12 +106,12 @@ data:
             },
             "textMode": "value"
           },
-          "pluginVersion": "8.4.3",
+          "pluginVersion": "10.0.3",
           "targets": [
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "prometheus"
               },
               "exemplar": true,
               "expr": "speedtest_up{instance=\"$instance\", job=\"$job\"}",
@@ -161,6 +124,10 @@ data:
           "type": "stat"
         },
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
           "description": "ServerID of the last test done",
           "fieldConfig": {
             "defaults": {
@@ -201,12 +168,12 @@ data:
             },
             "textMode": "value"
           },
-          "pluginVersion": "8.4.3",
+          "pluginVersion": "10.0.3",
           "targets": [
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "prometheus"
               },
               "exemplar": true,
               "expr": "speedtest_server_id{instance=\"$instance\", job=\"$job\"}",
@@ -220,6 +187,10 @@ data:
         },
         {
           "collapsed": false,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
           "gridPos": {
             "h": 1,
             "w": 24,
@@ -228,10 +199,23 @@ data:
           },
           "id": 8,
           "panels": [],
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "refId": "A"
+            }
+          ],
           "title": "Gauges",
           "type": "row"
         },
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -272,12 +256,12 @@ data:
             "showThresholdMarkers": true,
             "text": {}
           },
-          "pluginVersion": "8.4.3",
+          "pluginVersion": "10.0.3",
           "targets": [
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "prometheus"
               },
               "exemplar": true,
               "expr": "speedtest_download_bits_per_second{instance=\"$instance\", job=\"$job\"}*10^-6",
@@ -290,6 +274,10 @@ data:
           "type": "gauge"
         },
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -329,12 +317,12 @@ data:
             "showThresholdLabels": false,
             "showThresholdMarkers": true
           },
-          "pluginVersion": "8.4.3",
+          "pluginVersion": "10.0.3",
           "targets": [
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "prometheus"
               },
               "exemplar": true,
               "expr": "speedtest_upload_bits_per_second{instance=\"$instance\", job=\"$job\"}*10^-6",
@@ -347,6 +335,10 @@ data:
           "type": "gauge"
         },
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -386,12 +378,12 @@ data:
             "showThresholdLabels": false,
             "showThresholdMarkers": true
           },
-          "pluginVersion": "8.4.3",
+          "pluginVersion": "10.0.3",
           "targets": [
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "prometheus"
               },
               "exemplar": true,
               "expr": "speedtest_ping_latency_milliseconds{instance=\"$instance\", job=\"$job\"}",
@@ -404,6 +396,10 @@ data:
           "type": "gauge"
         },
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -443,12 +439,12 @@ data:
             "showThresholdLabels": false,
             "showThresholdMarkers": true
           },
-          "pluginVersion": "8.4.3",
+          "pluginVersion": "10.0.3",
           "targets": [
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "prometheus"
               },
               "exemplar": true,
               "expr": "speedtest_jitter_latency_milliseconds{instance=\"$instance\", job=\"$job\"}",
@@ -462,6 +458,10 @@ data:
         },
         {
           "collapsed": false,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
           "gridPos": {
             "h": 1,
             "w": 24,
@@ -470,10 +470,23 @@ data:
           },
           "id": 6,
           "panels": [],
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "refId": "A"
+            }
+          ],
           "title": "Graphics",
           "type": "row"
         },
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
           "description": "",
           "fieldConfig": {
             "defaults": {
@@ -481,6 +494,8 @@ data:
                 "mode": "palette-classic"
               },
               "custom": {
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
                 "axisLabel": "Download Speed",
                 "axisPlacement": "auto",
                 "barAlignment": 0,
@@ -541,7 +556,8 @@ data:
                 "min"
               ],
               "displayMode": "table",
-              "placement": "bottom"
+              "placement": "bottom",
+              "showLegend": true
             },
             "tooltip": {
               "mode": "multi",
@@ -553,7 +569,7 @@ data:
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "prometheus"
               },
               "exemplar": true,
               "expr": "speedtest_download_bits_per_second{instance=\"$instance\", job=\"$job\"}*10^-6",
@@ -566,12 +582,18 @@ data:
           "type": "timeseries"
         },
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
           "fieldConfig": {
             "defaults": {
               "color": {
                 "mode": "palette-classic"
               },
               "custom": {
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
                 "axisLabel": "Upload Speed",
                 "axisPlacement": "auto",
                 "barAlignment": 0,
@@ -632,7 +654,8 @@ data:
                 "min"
               ],
               "displayMode": "table",
-              "placement": "bottom"
+              "placement": "bottom",
+              "showLegend": true
             },
             "tooltip": {
               "mode": "multi",
@@ -644,7 +667,7 @@ data:
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "prometheus"
               },
               "exemplar": true,
               "expr": "speedtest_upload_bits_per_second{instance=\"$instance\", job=\"$job\"}*10^-6",
@@ -657,6 +680,10 @@ data:
           "type": "timeseries"
         },
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -695,8 +722,7 @@ data:
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -723,7 +749,8 @@ data:
                 "min"
               ],
               "displayMode": "table",
-              "placement": "bottom"
+              "placement": "bottom",
+              "showLegend": true
             },
             "tooltip": {
               "mode": "multi",
@@ -735,7 +762,7 @@ data:
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "prometheus"
               },
               "exemplar": true,
               "expr": "speedtest_ping_latency_milliseconds{instance=\"$instance\", job=\"$job\"}",
@@ -746,7 +773,7 @@ data:
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "prometheus"
               },
               "exemplar": true,
               "expr": "speedtest_jitter_latency_milliseconds{instance=\"$instance\", job=\"$job\"}",
@@ -761,13 +788,21 @@ data:
         }
       ],
       "refresh": "5m",
-      "schemaVersion": 35,
+      "schemaVersion": 38,
       "style": "dark",
       "tags": [],
       "templating": {
         "list": [
           {
-            "current": {},
+            "current": {
+              "selected": false,
+              "text": "10.42.0.113:9798",
+              "value": "10.42.0.113:9798"
+            },
+            "datasource": {
+              "type": "prometheus",
+              "uid": "prometheus"
+            },
             "definition": "label_values(speedtest_up, instance)",
             "hide": 0,
             "includeAll": false,
@@ -783,11 +818,18 @@ data:
             "regex": "",
             "skipUrlSync": false,
             "sort": 0,
-            "type": "query",
-            "datasource": "${DS_PROMETHEUS}"
+            "type": "query"
           },
           {
-            "current": {},
+            "current": {
+              "selected": false,
+              "text": "speedtest",
+              "value": "speedtest"
+            },
+            "datasource": {
+              "type": "prometheus",
+              "uid": "prometheus"
+            },
             "definition": "label_values(speedtest_up, job)",
             "hide": 0,
             "includeAll": false,
@@ -803,8 +845,7 @@ data:
             "regex": "",
             "skipUrlSync": false,
             "sort": 0,
-            "type": "query",
-            "datasource": "${DS_PROMETHEUS}"
+            "type": "query"
           }
         ]
       },
@@ -816,6 +857,6 @@ data:
       "timezone": "",
       "title": "Speedtest-Exporter Dashboard",
       "uid": "-fs18ztMz",
-      "version": 10,
+      "version": 1,
       "weekStart": ""
     }
