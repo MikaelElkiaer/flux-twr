@@ -41,7 +41,6 @@ spec:
       volumes:
         - name: homeassistant-appdata
           hostPath:
-            name: homeassistant
             path: /home/me/Appdata/homeassistant
         - name: homeassistant-configuration
           configMap:
