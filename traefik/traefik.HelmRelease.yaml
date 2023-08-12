@@ -51,7 +51,6 @@ spec:
           trustedIPs:
             - 10.41.0.0/16
             - 10.42.0.0/16
-        nodePort: 32080
         proxyProtocol:
           trustedIPs:
             - 10.41.0.0/16
@@ -62,10 +61,10 @@ spec:
           trustedIPs:
             - 10.41.0.0/16
             - 10.42.0.0/16
-        nodePort: 32443
         proxyProtocol:
           trustedIPs:
             - 10.41.0.0/16
             - 10.42.0.0/16
     service:
-      type: NodePort
+      spec:
+        externalTrafficPolicy: Local
