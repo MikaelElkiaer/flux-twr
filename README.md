@@ -47,6 +47,7 @@ sudo loginctl enable-linger "$(whoami)"
 sudo iptables -t nat -A PREROUTING -i "${LAN_IFACE:-enp3s0}" -p tcp --dport 80 -j REDIRECT --to-port 10080
 sudo iptables -t nat -A PREROUTING -i "${LAN_IFACE:-enp3s0}" -p tcp --dport 443 -j REDIRECT --to-port 10443
 sudo iptables-save -f /etc/iptables/iptables.rules
+sudo systemctl enable --now iptables
 
 # Enable ip forwarding
 # - in theory, this should allow resolving of source IP for proxied requests
