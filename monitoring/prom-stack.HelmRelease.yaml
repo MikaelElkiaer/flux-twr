@@ -19,6 +19,7 @@ spec:
       grafana.ini:
         auth.anonymous:
           enabled: true
+          org_role: Editor
       ingress:
         enabled: true
         annotations:
