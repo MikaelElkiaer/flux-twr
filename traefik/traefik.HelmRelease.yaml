@@ -41,8 +41,8 @@ spec:
         matchRule: Host(`traefik.home.elkiaer.net`) && (PathPrefix(`/dashboard`) || PathPrefix(`/api`))
         tls:
           - hosts:
-              - z2mqtt.home.elkiaer.net
-            secretName: net-elkiaer-home-z2mqtt
+              - traefik.home.elkiaer.net
+            secretName: net-elkiaer-home-traefik
     logs:
       access:
         enabled: true
