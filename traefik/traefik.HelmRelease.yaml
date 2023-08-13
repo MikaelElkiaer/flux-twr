@@ -33,6 +33,10 @@ spec:
       kind: DaemonSet
     image:
       tag: 2.10.4 # {"$imagepolicy": "flux-system:traefik:tag"}
+    ingressRoute:
+      dashboard:
+        entryPoints: ["web", "websecure"]
+        matchRule: Host(`traefik.home.elkiaer.net`) && (PathPrefix(`/dashboard`) || PathPrefix(`/api`))
     logs:
       access:
         enabled: true
