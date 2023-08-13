@@ -49,6 +49,11 @@ spec:
         format: json
       general:
         format: json
+    metrics:
+      prometheus:
+        serviceMonitor:
+          additionalLables:
+            release: prom-stack
     ports:
       web:
         forwardedHeaders:
