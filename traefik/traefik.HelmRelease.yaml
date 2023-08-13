@@ -35,14 +35,7 @@ spec:
       tag: 2.10.4 # {"$imagepolicy": "flux-system:traefik:tag"}
     ingressRoute:
       dashboard:
-        annotations:
-          cert-manager.io/cluster-issuer: letsencrypt
-        entryPoints: ["web", "websecure"]
-        matchRule: Host(`traefik.home.elkiaer.net`) && (PathPrefix(`/dashboard`) || PathPrefix(`/api`))
-        tls:
-          - hosts:
-              - traefik.home.elkiaer.net
-            secretName: net-elkiaer-home-traefik
+        enabled: false
     logs:
       access:
         enabled: true
