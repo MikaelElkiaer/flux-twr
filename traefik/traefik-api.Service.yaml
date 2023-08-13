@@ -6,7 +6,8 @@ metadata:
   name: traefik-api
 spec:
   selector:
-    app: traefik
+    app.kubernetes.io/instance: traefik-traefik
+    app.kubernetes.io/name: traefik
   ports:
     - name: traefik
       port: 9000
