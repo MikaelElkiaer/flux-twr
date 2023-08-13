@@ -38,9 +38,7 @@ spec:
         entryPoints: ["web", "websecure"]
         matchRule: Host(`traefik.home.elkiaer.net`) && PathPrefix(`/dashboard`, `/api`)
         tls:
-          - hosts:
-              - traefik.home.elkiaer.net
-            secretName: net-elkiaer-home-traefik
+          secretName: net-elkiaer-home-traefik
     logs:
       access:
         enabled: true
