@@ -58,7 +58,7 @@ spec:
     metrics:
       prometheus:
         serviceMonitor:
-          additionalLables:
+          additionalLabels:
             release: prom-stack
     ports:
       web:
