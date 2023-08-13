@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  labels:
+    app: traefik
+  name: traefik-api
+spec:
+  selector:
+    app: traefik
+  ports:
+    - name: traefik
+      port: 9000
+      targetPort: traefik

@@ -13,7 +13,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: traefik
+                name: traefik-api
                 port:
                   name: traefik
   tls:
