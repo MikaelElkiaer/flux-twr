@@ -1,0 +1,11 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: net-elkiaer-home-traefik
+spec:
+  secretName: net-elkiaer-home-traefik
+  issuerRef:
+    name: letsencrypt
+    kind: ClusterIssuer
+  dnsNames:
+    - traefik.home.elkiaer.net

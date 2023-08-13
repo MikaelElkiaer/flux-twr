@@ -35,7 +35,12 @@ spec:
       tag: 2.10.4 # {"$imagepolicy": "flux-system:traefik:tag"}
     ingressRoute:
       dashboard:
-        enabled: false
+        entryPoints: ["web", "websecure"]
+        matchRule: Host(`traefik.home.elkiaer.net`) && PathPrefix(`/dashboard`, `/api`)
+        tls:
+          - hosts:
+              - traefik.home.elkiaer.net
+            secretName: net-elkiaer-home-traefik
     logs:
       access:
         enabled: true
