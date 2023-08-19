@@ -57,6 +57,16 @@ spec:
           additionalLabels:
             release: prom-stack
     ports:
+      socks5-tcp:
+        port: 1080
+        expose: true
+        exposedPort: 1080
+        protocol: TCP
+      socks5-udp:
+        port: 1080
+        expose: true
+        exposedPort: 1080
+        protocol: UDP
       web:
         forwardedHeaders:
           trustedIPs:

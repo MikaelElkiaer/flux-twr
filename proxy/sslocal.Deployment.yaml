@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: sslocal
+  name: sslocal
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sslocal
+  template:
+    metadata:
+      labels:
+        app: sslocal
+    spec:
+      containers:
+        - name: sslocal
+          image: ghcr.io/shadowsocks/sslocal-rust:v1.15.4
+          ports:
+            - name: socks5-tcp
+              containerPort: 1080
+              protocol: TCP
+            - name: socks5-udp
+              containerPort: 1080
+              protocol: UDP
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop: ["ALL", "NET_RAW"]
+            runAsUser: 1001
+          volumeMounts:
+            - mountPath: /etc/shadowsocks-rust/config.json
+              name: config
+              subPath: config.json
+              readOnly: true
+      securityContext:
+        runAsNonRoot: true
+      volumes:
+        - name: config
+          configMap:
+            name: sslocal

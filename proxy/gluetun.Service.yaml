@@ -1,0 +1,18 @@
+kind: Service
+apiVersion: v1
+metadata:
+  labels:
+    app: gluetun
+  name: gluetun
+spec:
+  selector:
+    app: gluetun
+  ports:
+    - name: shadowsocks-tcp
+      port: 8388
+      targetPort: shadowsocks-tcp
+      protocol: TCP
+    - name: shadowsocks-udp
+      port: 8388
+      targetPort: shadowsocks-udp
+      protocol: UDP

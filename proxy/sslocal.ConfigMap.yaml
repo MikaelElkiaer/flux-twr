@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: sslocal
+data:
+  config.json: |
+    {
+      "server": "gluetun",
+      "server_port": 8388,
+      "password": "",
+      "method": "chacha20-ietf-poly1305",
+      "local_address": "0.0.0.0",
+      "local_port": 1080
+    }

@@ -1,0 +1,11 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRouteUDP
+metadata:
+  name: sslocal
+spec:
+  entryPoints:
+    - socks5-udp
+  routes:
+    - services:
+      - name: sslocal
+        port: socks5-udp

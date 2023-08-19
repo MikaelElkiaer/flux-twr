@@ -1,0 +1,18 @@
+kind: Service
+apiVersion: v1
+metadata:
+  labels:
+    app: sslocal
+  name: sslocal
+spec:
+  selector:
+    app: sslocal
+  ports:
+    - name: socks5-tcp
+      port: 1080
+      targetPort: socks5-tcp
+      protocol: TCP
+    - name: socks5-udp
+      port: 1080
+      targetPort: socks5-udp
+      protocol: UDP
