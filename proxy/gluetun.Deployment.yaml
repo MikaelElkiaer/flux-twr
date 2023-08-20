@@ -30,11 +30,3 @@ spec:
             - name: shadowsocks-udp
               containerPort: 8388
               protocol: UDP
-          securityContext:
-            allowPrivilegeEscalation: false
-            capabilities:
-              add: ["NET_ADMIN", "NET_RAW", "SYS_MODULE"]
-              drop: ["ALL"]
-            runAsUser: 1001
-      securityContext:
-        runAsNonRoot: true
