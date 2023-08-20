@@ -56,8 +56,6 @@ spec:
             allowPrivilegeEscalation: false
             capabilities:
               drop: ["ALL", "NET_RAW"]
-            runAsGroup: 1000
-            runAsUser: 1000
           startupProbe:
             tcpSocket:
               port: 8080
@@ -67,7 +65,11 @@ spec:
             periodSeconds: 5
       securityContext:
         fsGroup: 1000
+        runAsGroup: 1000
         runAsNonRoot: true
+        runAsUser: 1000
+        supplementalGroups:
+          - 986
       volumes:
         - name: zigbee2mqtt-data
           persistentVolumeClaim:
