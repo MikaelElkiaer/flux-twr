@@ -4,6 +4,8 @@ metadata:
   name: traefik
   namespace: flux-system
 spec:
+  dependsOn:
+    - name: cert-manager-controller
   interval: 10m
   path: ./traefik
   prune: true
