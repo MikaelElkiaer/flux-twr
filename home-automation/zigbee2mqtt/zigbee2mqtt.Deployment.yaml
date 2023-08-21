@@ -35,7 +35,6 @@ spec:
               subPath: configuration.yaml
             - name: zigbee2mqtt-udev
               mountPath: /run/udev
-              readOnly: true
             - name: ttyacm
               mountPath: /dev/ttyACM0
           livenessProbe:
