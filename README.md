@@ -63,7 +63,7 @@ EOF
 ```bash
 # Give user ownership of Zigbee USB dongle
 cat <<EOF | sudo tee /etc/udev/rules.d/99-perm.rules
-SUBSYSTEM=="usb", ATTRS{serial}=="20221101110016", OWNER="$(whoami)"
+SUBSYSTEMS=="usb", KERNEL=="ttyACM*", ATTRS{serial}=="20221101110016", OWNER="me"
 EOF
 ```
 
