@@ -52,10 +52,6 @@ spec:
             failureThreshold: 3
             timeoutSeconds: 1
             periodSeconds: 10
-          securityContext:
-            capabilities:
-              drop: ["ALL", "NET_RAW"]
-            privileged: true
           startupProbe:
             tcpSocket:
               port: 8080
@@ -63,13 +59,6 @@ spec:
             failureThreshold: 30
             timeoutSeconds: 1
             periodSeconds: 5
-      securityContext:
-        fsGroup: 1000
-        runAsGroup: 1000
-        runAsNonRoot: true
-        runAsUser: 1000
-        supplementalGroups:
-          - 986
       volumes:
         - name: zigbee2mqtt-data
           persistentVolumeClaim:
