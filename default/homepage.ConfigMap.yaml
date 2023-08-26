@@ -16,7 +16,7 @@ data:
         cpu: true
         disk:
           - /
-          - /mnt/data/
+          - /mnt/data
         expanded: true
         memory: true
         uptime: true
