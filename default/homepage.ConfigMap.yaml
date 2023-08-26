@@ -13,11 +13,11 @@ data:
     - Network:
       - OPNSense:
           icon: opnsense.png
-          href: https://opnsense
+          href: https://opnsense.localdomain
           description: Router
           widget:
             type: opnsense
-            url: https://opnsense
+            url: https://opnsense.localdomain
             username: "{{HOMEPAGE_VAR_OPNSENSE_KEY}}"
             password: "{{HOMEPAGE_VAR_OPNSENSE_SECRET}}"
   widgets.yaml: |
