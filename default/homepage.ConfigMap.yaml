@@ -9,7 +9,16 @@ data:
     mode: cluster
   settings.yaml: ""
   bookmarks.yaml: ""
-  services.yaml: ""
+  services.yaml: |
+    - OPNSense:
+        icon: opnsense.png
+        href: https://opnsense
+        description: Router
+        widget:
+          type: opnsense
+          url: https://opnsense
+          username: "{{HOMEPAGE_VAR_OPNSENSE_KEY}}"
+          password: "{{HOMEPAGE_VAR_OPNSENSE_SECRET}}"
   widgets.yaml: |
     - resources:
         backend: resources
