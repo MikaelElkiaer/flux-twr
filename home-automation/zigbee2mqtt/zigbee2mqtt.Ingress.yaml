@@ -16,7 +16,3 @@ spec:
                 name: zigbee2mqtt
                 port:
                   name: http
-  tls:
-    - hosts:
-        - z2mqtt.home.elkiaer.net
-      secretName: net-elkiaer-home-z2mqtt

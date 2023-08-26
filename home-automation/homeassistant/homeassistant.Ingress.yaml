@@ -16,7 +16,3 @@ spec:
                 name: homeassistant
                 port:
                   name: http
-  tls:
-    - hosts:
-        - ha.home.elkiaer.net
-      secretName: net-elkiaer-home-ha
