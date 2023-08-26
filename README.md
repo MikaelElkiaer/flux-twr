@@ -54,6 +54,7 @@ sudo systemctl enable --now iptables
 # - in practice, still not able to do this
 cat <<EOF | sudo tee /etc/sysctl.conf
 net.ipv4.ip_forward=1
+net.ipv4.ip_unprivileged_port_start = 80
 net.ipv6.conf.all.forwarding=1
 EOF
 ```
