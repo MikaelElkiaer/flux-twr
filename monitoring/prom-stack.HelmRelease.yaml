@@ -22,14 +22,8 @@ spec:
           org_role: Editor
       ingress:
         enabled: true
-        annotations:
-          cert-manager.io/cluster-issuer: letsencrypt
         hosts:
           - grafana.home.elkiaer.net
-        tls:
-          - secretName: net-elkiaer-home-grafana
-            hosts:
-              - grafana.home.elkiaer.net
       sidecar:
         dashboards:
           labelValue: "1"
