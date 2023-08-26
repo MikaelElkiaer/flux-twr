@@ -35,6 +35,14 @@ spec:
       tag: 2.10.4 # {"$imagepolicy": "flux-system:traefik:tag"}
     ingressRoute:
       dashboard:
+        annotations:
+          gethomepage.dev/enabled: "true"
+          gethomepage.dev/description: Reverse proxy
+          gethomepage.dev/group: Network
+          gethomepage.dev/icon: traefik.png
+          gethomepage.dev/name: Traefik
+          gethomepage.dev/widget.type: "traefik"
+          gethomepage.dev/widget.url: "https://traefik.home.elkiaer.net"
         entryPoints: ["web", "websecure"]
         matchRule: Host(`traefik.home.elkiaer.net`) && PathPrefix(`/dashboard`, `/api`)
     logs:
