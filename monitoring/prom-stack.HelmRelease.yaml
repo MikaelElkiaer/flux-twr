@@ -21,6 +21,14 @@ spec:
           enabled: true
           org_role: Editor
       ingress:
+        annotations:
+          gethomepage.dev/enabled: "true"
+          gethomepage.dev/description: Dashboards and alerts
+          gethomepage.dev/group: Monitoring
+          gethomepage.dev/icon: grafana.png
+          gethomepage.dev/name: Grafana
+          gethomepage.dev/widget.type: "grafana"
+          gethomepage.dev/widget.url: "https://grafana.home.elkiaer.net"
         enabled: true
         hosts:
           - grafana.home.elkiaer.net
