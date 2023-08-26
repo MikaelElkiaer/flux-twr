@@ -20,6 +20,7 @@ data:
             url: https://opnsense.localdomain
             username: "{{HOMEPAGE_VAR_OPNSENSE_KEY}}"
             password: "{{HOMEPAGE_VAR_OPNSENSE_SECRET}}"
+            wan: opt1
   widgets.yaml: |
     - resources:
         backend: resources
