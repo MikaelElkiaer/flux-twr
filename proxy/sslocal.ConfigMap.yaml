@@ -9,6 +9,7 @@ data:
       "server_port": 8388,
       "password": "",
       "method": "chacha20-ietf-poly1305",
+      "mode": "tcp_and_udp",
       "local_address": "0.0.0.0",
       "local_port": 1080
     }
