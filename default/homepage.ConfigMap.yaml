@@ -11,23 +11,15 @@ data:
   bookmarks.yaml: ""
   services.yaml: ""
   widgets.yaml: |
-    - kubernetes:
-        cluster:
-          show: true
-          cpu: true
-          memory: true
-          showLabel: true
-          label: "cluster"
-        nodes:
-          show: true
-          cpu: true
-          memory: true
-          showLabel: true
     - resources:
         backend: resources
-        expanded: true
         cpu: true
+        disk:
+          - /
+          - /mnt/data/
+        expanded: true
         memory: true
+        uptime: true
     - search:
         provider: duckduckgo
         target: _blank
