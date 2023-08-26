@@ -23,11 +23,18 @@ spec:
               containerPort: 3000
               protocol: TCP
           volumeMounts:
+            - name: data
+              mountPath: /mnt/data
+              readOnly: true
             - name: homepage-config
               mountPath: /app/config
             - name: logs
               mountPath: /app/config/logs
       volumes:
+        - name: data
+          hostPath:
+            path: /mnt/data
+            type: Directory
         - name: homepage-config
           configMap:
             name: homepage
