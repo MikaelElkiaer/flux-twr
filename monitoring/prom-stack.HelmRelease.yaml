@@ -29,6 +29,8 @@ spec:
           gethomepage.dev/name: Grafana
           gethomepage.dev/widget.type: "grafana"
           gethomepage.dev/widget.url: "https://grafana.home.elkiaer.net"
+          gethomepage.dev/widget.username: admin
+          gethomepage.dev/widget.password: prom-operator
         enabled: true
         hosts:
           - grafana.home.elkiaer.net
