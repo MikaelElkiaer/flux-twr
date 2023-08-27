@@ -3,7 +3,14 @@ kind: Ingress
 metadata:
   name: homeassistant
   annotations:
-    cert-manager.io/cluster-issuer: letsencrypt
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/description: Home devices, automations, and dashboards
+    gethomepage.dev/group: Home Automation
+    gethomepage.dev/icon: homeassistant.png
+    gethomepage.dev/name: Home Assistant
+    gethomepage.dev/widget.type: "homeassistant"
+    gethomepage.dev/widget.url: "https://ha.home.elkiaer.net"
+    gethomepage.dev/widget.key: "{{HOMEPAGE_VAR_HOMEASSISTANT_TOKEN}}"
 spec:
   rules:
     - host: ha.home.elkiaer.net
