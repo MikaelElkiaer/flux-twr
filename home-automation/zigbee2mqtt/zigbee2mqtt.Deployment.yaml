@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: zigbee2mqtt
-          image: koenkk/zigbee2mqtt:1.32.2
+          image: docker.io/koenkk/zigbee2mqtt:1.32.2 # {"$imagepolicy": "home-automation:zigbee2mqtt"}
           env:
             - name: TZ
               value: Europe/Copenhagen
