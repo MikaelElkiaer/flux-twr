@@ -8,6 +8,10 @@ spec:
   selector:
     app: gluetun
   ports:
+    - name: control
+      port: 8000
+      targetPort: control
+      protocol: TCP
     - name: shadowsocks-tcp
       port: 8388
       targetPort: shadowsocks-tcp

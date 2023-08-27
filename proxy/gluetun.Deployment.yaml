@@ -24,6 +24,9 @@ spec:
                 name: wireguard-config
           image: qmcgaw/gluetun:v3.35.0
           ports:
+            - name: control
+              containerPort: 8000
+              protocol: TCP
             - name: shadowsocks-tcp
               containerPort: 8388
               protocol: TCP

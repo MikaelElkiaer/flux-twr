@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: gluetun
+  labels:
+    app.kubernetes.io/name: gluetun
+  annotations:
+    gethomepage.dev/description: Proxy server
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/group: System
+    gethomepage.dev/icon: gluetun.png
+    gethomepage.dev/name: Gluetun
+    gethomepage.dev/widget.type: "gluetun"
+    gethomepage.dev/widget.url: "https://gluetun.home.elkiaer.net"
+spec:
+  rules:
+    - host: gluetun.home.elkiaer.net
+      http:
+        paths:
+          - path: "/"
+            pathType: Prefix
+            backend:
+              service:
+                name: gluetun
+                port:
+                  name: control
