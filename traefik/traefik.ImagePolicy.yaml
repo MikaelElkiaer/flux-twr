@@ -5,6 +5,7 @@ metadata:
 spec:
   imageRepositoryRef:
     name: traefik
+    namespace: traefik
   policy:
     semver:
       range: v2.x.x
