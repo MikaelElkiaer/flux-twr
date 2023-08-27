@@ -1,0 +1,11 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: homeassistant
+spec:
+  imageRepositoryRef:
+    name: homeassistant
+    namespace: home-automation
+  policy:
+    semver:
+      range: x.x.x

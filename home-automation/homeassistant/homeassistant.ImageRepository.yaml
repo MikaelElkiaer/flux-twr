@@ -1,0 +1,7 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: homeassistant
+spec:
+  image: ghcr.io/home-assistant/home-assistant
+  interval: 10m0s
