@@ -10,7 +10,7 @@ data:
   settings.yaml: ""
   bookmarks.yaml: ""
   services.yaml: |
-    - Network:
+    - System:
       - OPNSense:
           icon: opnsense.png
           href: https://opnsense.localdomain

@@ -38,7 +38,7 @@ spec:
         annotations:
           gethomepage.dev/enabled: "true"
           gethomepage.dev/description: Reverse proxy
-          gethomepage.dev/group: Network
+          gethomepage.dev/group: System
           gethomepage.dev/href: "https://traefik.home.elkiaer.net"
           gethomepage.dev/icon: traefik.png
           gethomepage.dev/name: Traefik

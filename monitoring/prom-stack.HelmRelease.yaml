@@ -24,7 +24,7 @@ spec:
         annotations:
           gethomepage.dev/enabled: "true"
           gethomepage.dev/description: Dashboards and alerts
-          gethomepage.dev/group: Monitoring
+          gethomepage.dev/group: System
           gethomepage.dev/icon: grafana.png
           gethomepage.dev/name: Grafana
           gethomepage.dev/widget.type: "grafana"
