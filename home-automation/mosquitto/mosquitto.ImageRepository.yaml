@@ -1,0 +1,7 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: mosquitto
+spec:
+  image: docker.io/library/eclipse-mosquitto
+  interval: 10m0s
