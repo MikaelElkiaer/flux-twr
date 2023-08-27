@@ -1,0 +1,7 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: homepage
+spec:
+  image: ghcr.io/benphelps/homepage
+  interval: 10m0s
