@@ -1,8 +1,8 @@
-name: Auto PR - image updates 
+name: Auto PR - image updates
 on:
   push:
     branches:
-      - auto/image-updates
+      - auto/update-*
 jobs:
   pull-request:
     name: Open PR to main
