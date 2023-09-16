@@ -1,18 +1,16 @@
-name: Staging Auto-PR
+name: Auto PR - image updates 
 on:
-  create:
+  push:
     branches:
-      - staging
-permissions:
-  pull-requests: write
+      - auto/image-updates
 jobs:
   pull-request:
     name: Open PR to main
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-      name: checkout
-    - name: pull-request
+    - name: Checkout
+      uses: actions/checkout@v3
+    - name: Open or update PR
       run: |
         gh_pr_up() { gh pr create $* || gh pr edit $* }
         gh_pr_up --title "Automatic image updates" --body "New updates are ready to be applied."
