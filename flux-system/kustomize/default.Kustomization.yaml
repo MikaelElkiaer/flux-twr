@@ -4,6 +4,8 @@ metadata:
   name: default
   namespace: flux-system
 spec:
+  components:
+    - ../_shared
   dependsOn:
     - name: monitoring
   interval: 10m

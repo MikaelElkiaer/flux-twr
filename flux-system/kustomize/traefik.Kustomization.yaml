@@ -4,6 +4,8 @@ metadata:
   name: traefik
   namespace: flux-system
 spec:
+  components:
+    - ../_shared
   dependsOn:
     - name: cert-manager-controller
   interval: 10m

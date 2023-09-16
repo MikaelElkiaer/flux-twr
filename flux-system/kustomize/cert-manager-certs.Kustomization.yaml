@@ -4,6 +4,8 @@ metadata:
   name: cert-manager-certs
   namespace: flux-system
 spec:
+  components:
+    - ../../_shared
   dependsOn:
     - name: cert-manager-controller
     - name: sealed-secrets
