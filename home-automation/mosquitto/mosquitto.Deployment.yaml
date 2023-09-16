@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: mosquitto
-          image: docker.io/library/eclipse-mosquitto:2.0 # {"$imagepolicy": "home-automation:mosquitto"}
+          image: docker.io/library/eclipse-mosquitto:2.0.17 # {"$imagepolicy": "home-automation:mosquitto"}
           resources:
             requests:
               cpu: "50m"
