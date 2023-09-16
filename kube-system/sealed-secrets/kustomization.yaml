@@ -1,2 +1,2 @@
-resources:
-  - ../../_shared/pr-image-updates.ImageUpdateAutomation.yaml
+bases:
+  - ../../_shared
