@@ -1,7 +1,7 @@
 apiVersion: image.toolkit.fluxcd.io/v1beta1
 kind: ImageUpdateAutomation
 metadata:
-  name: pr-image-updates
+  name: update-sealed-secrets
 spec:
   interval: 10m0s
   sourceRef:
@@ -18,7 +18,7 @@ spec:
         name: fluxcdbot
       messageTemplate: '{{range .Updated.Images}}{{println .}}{{end}}'
     push:
-      branch: auto/image-updates
+      branch: auto/update-sealed-secrets
   update:
-    path: .
+    path: ./kube-system/sealed-secrets
     strategy: Setters

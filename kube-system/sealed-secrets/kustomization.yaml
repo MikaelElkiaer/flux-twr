@@ -1,5 +1,0 @@
-resources:
-  - ../../_shared
-  - ./sealed-secrets.ImageRepository.yaml
-  - ./sealed-secrets.ImagePolicy.yaml
-  - ./sealed-secrets.HelmRelease.yaml
