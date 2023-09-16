@@ -1,2 +1,2 @@
 resources:
-  - .
+  - ./pr-image-updates.ImageUpdateAutomation.yaml
