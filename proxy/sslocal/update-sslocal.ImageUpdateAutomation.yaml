@@ -20,5 +20,5 @@ spec:
     push:
       branch: auto/update-sslocal
   update:
-    path: ./kube-system/sslocal
+    path: ./proxy/sslocal
     strategy: Setters

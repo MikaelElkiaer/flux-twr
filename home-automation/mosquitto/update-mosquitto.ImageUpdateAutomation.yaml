@@ -20,5 +20,5 @@ spec:
     push:
       branch: auto/update-mosquitto
   update:
-    path: ./kube-system/mosquitto
+    path: ./home-automation/homeassistant
     strategy: Setters

@@ -20,5 +20,5 @@ spec:
     push:
       branch: auto/update-homepage
   update:
-    path: ./kube-system/homepage
+    path: ./default/homepage
     strategy: Setters

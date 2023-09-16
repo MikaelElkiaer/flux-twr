@@ -20,5 +20,5 @@ spec:
     push:
       branch: auto/update-traefik
   update:
-    path: ./kube-system/traefik
+    path: ./traefik
     strategy: Setters

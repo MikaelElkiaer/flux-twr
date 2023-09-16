@@ -20,5 +20,5 @@ spec:
     push:
       branch: auto/update-speedtest
   update:
-    path: ./kube-system/speedtest
+    path: ./default/speedtest
     strategy: Setters

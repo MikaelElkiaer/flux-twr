@@ -20,5 +20,5 @@ spec:
     push:
       branch: auto/update-zigbee2mqtt
   update:
-    path: ./kube-system/zigbee2mqtt
+    path: ./home-automation/homeassistant
     strategy: Setters

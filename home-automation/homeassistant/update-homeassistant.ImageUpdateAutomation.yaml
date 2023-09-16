@@ -20,5 +20,5 @@ spec:
     push:
       branch: auto/update-homeassistant
   update:
-    path: ./kube-system/homeassistant
+    path: ./home-automation/homeassistant
     strategy: Setters
