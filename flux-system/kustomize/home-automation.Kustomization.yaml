@@ -4,8 +4,6 @@ metadata:
   name: home-automation
   namespace: flux-system
 spec:
-  components:
-    - ../_shared
   dependsOn:
     - name: sealed-secrets
   interval: 10m
