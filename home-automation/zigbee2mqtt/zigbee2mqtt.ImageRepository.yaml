@@ -3,5 +3,5 @@ kind: ImageRepository
 metadata:
   name: zigbee2mqtt
 spec:
-  image: docker.io/library/eclipse-mosquitto
+  image: docker.io/koenkk/zigbee2mqtt
   interval: 10m0s
