@@ -20,7 +20,7 @@ spec:
             - secretRef:
                 name: homepage-vars
           name: homepage
-          image: ghcr.io/benphelps/homepage:v0.6.33 # {"$imagepolicy": "default:homepage"}
+          image: ghcr.io/benphelps/homepage:main # {"$imagepolicy": "default:homepage"}
           ports:
             - name: http
               containerPort: 3000
