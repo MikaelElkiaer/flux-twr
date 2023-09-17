@@ -1,0 +1,17 @@
+apiVersion: v1
+items:
+- apiVersion: traefik.io/v1alpha1
+  kind: IngressRoute
+  metadata:
+    name: dummy
+    namespace: default
+  spec:
+    entryPoints:
+    - web
+    - websecure
+    routes:
+    - kind: Rule
+      match: Host(`dummy.home.elkiaer.net`)
+      services:
+      - kind: TraefikService
+        name: api@internal
