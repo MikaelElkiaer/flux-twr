@@ -33,6 +33,7 @@ spec:
               mountPath: /app/config
             - name: logs
               mountPath: /app/config/logs
+          imagePullPolicy: Always
       volumes:
         - name: data
           hostPath:
