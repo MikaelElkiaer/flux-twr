@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: checkupdates
-          image: ghcr.io/mikaelelkiaer/checkupdates-prometheus-exporter:v1.0.2 # {"$imagepolicy": "default:checkupdates"}
+          image: ghcr.io/mikaelelkiaer/checkupdates-prometheus-exporter:1.0.2 # {"$imagepolicy": "default:checkupdates"}
           ports:
             - name: metrics
               containerPort: 9100
