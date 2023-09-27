@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  labels:
+    app: checkupdates
+  name: checkupdates
+spec:
+  selector:
+    app: checkupdates
+  ports:
+    - name: metrics
+      port: 9100
+      targetPort: metrics

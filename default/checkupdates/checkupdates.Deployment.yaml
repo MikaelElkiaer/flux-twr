@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: checkupdates
+  name: checkupdates
+spec:
+  selector:
+    matchLabels:
+      app: checkupdates
+  template:
+    metadata:
+      labels:
+        app: checkupdates
+    spec:
+      containers:
+        - name: checkupdates
+          image: ghcr.io/MikaelElkiaer/checkupdates-prometheus-exporter:v1.0.2 # {"$imagepolicy": "default:checkupdates"}
+          ports:
+            - name: metrics
+              containerPort: 9100
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop: ["ALL", "NET_RAW"]
+            runAsUser: 1001
+          volumeMounts:
+            - mountPath: /tmp/checkupdates.txt
+              name: checkupdates-file
+              subPath: checkupdates.txt
+      securityContext:
+        runAsNonRoot: true
+      volumes:
+        - name: checkupdates-file
+          hostPath:
+            path: /tmp/checkupdates.txt
+            type: FileOrCreate

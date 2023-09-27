@@ -1,0 +1,11 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: checkupdates
+spec:
+  imageRepositoryRef:
+    name: checkupdates
+    namespace: default
+  policy:
+    semver:
+      range: v1.x.x

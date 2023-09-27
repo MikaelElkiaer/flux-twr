@@ -1,0 +1,17 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  labels:
+    release: prom-stack
+  name: checkupdates
+spec:
+  endpoints:
+    - interval: 10m
+      port: metrics
+      scrapeTimeout: 1m
+  namespaceSelector:
+    matchNames:
+      - default
+  selector:
+    matchLabels:
+      app: checkupdates
