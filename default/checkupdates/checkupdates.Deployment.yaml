@@ -33,5 +33,5 @@ spec:
       volumes:
         - name: checkupdates-file
           hostPath:
-            path: /tmp/checkupdates.txt
+            path: /home/me/checkupdates.txt
             type: File
