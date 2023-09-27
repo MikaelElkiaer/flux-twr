@@ -27,7 +27,7 @@ spec:
           volumeMounts:
             - mountPath: /tmp/checkupdates.txt
               name: checkupdates-file
-              subPath: checkupdates.txt
+              readOnly: true
       securityContext:
         runAsNonRoot: true
       volumes:
