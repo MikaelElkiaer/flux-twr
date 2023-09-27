@@ -34,4 +34,4 @@ spec:
         - name: checkupdates-file
           hostPath:
             path: /tmp/checkupdates.txt
-            type: FileOrCreate
+            type: File
