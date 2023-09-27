@@ -76,7 +76,7 @@ EOF
 flux install --components-extra=image-reflector-controller,image-automation-controller
 
 # This will output SSH public key to be added as 'Deploy key' to the GitHub repository
-flux create source git flux-system --branch=main --url=ssh://git@github.com/MikaelElkiaer/twr-flux
+flux create source git flux-system --branch=main --url=ssh://git@github.com/mikaelelkiaer/twr-flux
 
 # The root component to watch and apply source changes to cluster
 flux create kustomization flux-system --path="flux-system" --source=flux-system --prune=true

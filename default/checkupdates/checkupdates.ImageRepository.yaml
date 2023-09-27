@@ -3,5 +3,5 @@ kind: ImageRepository
 metadata:
   name: checkupdates
 spec:
-  image: ghcr.io/MikaelElkiaer/checkupdates-prometheus-exporter
+  image: ghcr.io/mikaelelkiaer/checkupdates-prometheus-exporter
   interval: 10m0s
