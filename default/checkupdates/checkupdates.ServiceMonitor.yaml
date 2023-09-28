@@ -6,7 +6,7 @@ metadata:
   name: checkupdates
 spec:
   endpoints:
-    - interval: 10m
+    - interval: 5m
       port: metrics
       scrapeTimeout: 1m
   namespaceSelector:
