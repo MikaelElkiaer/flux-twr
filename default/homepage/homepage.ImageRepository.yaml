@@ -3,5 +3,5 @@ kind: ImageRepository
 metadata:
   name: homepage
 spec:
-  image: ghcr.io/benphelps/homepage
+  image: ghcr.io/gethomepage/homepage
   interval: 10m0s
