@@ -8,6 +8,9 @@ spec:
   selector:
     app: checkupdates
   ports:
+    - name: http
+      port: 8080
+      targetPort: http
     - name: metrics
       port: 9100
       targetPort: metrics
