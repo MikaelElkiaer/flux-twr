@@ -10,7 +10,7 @@ It is based on a minimal Arch linux installation.
 sudo pacman -S --noconfirm curl fuse3
 
 # Download k3s binary and make it executable
-sudo curl -Lo /usr/local/bin/k3s https://github.com/k3s-io/k3s/releases/download/v1.27.4+k3s1/k3s
+sudo curl -Lo /usr/local/bin/k3s https://github.com/k3s-io/k3s/releases/download/v1.28.2+k3s1/k3s
 sudo chmod a+x /usr/local/bin/k3s
 
 # Create rootless service for local user
@@ -44,9 +44,12 @@ sudo loginctl enable-linger "$(whoami)"
 # Configure port forward rules and persist
 # - rootless k3s will offset privileged ports (below 1024) by 10000
 # - these rules will allow use of the privileged ports, redirected to the offset equivalents
-sudo iptables -t nat -A PREROUTING -i "${LAN_IFACE:-enp3s0}" -p tcp --dport 80 -j REDIRECT --to-port 10080
-sudo iptables -t nat -A PREROUTING -i "${LAN_IFACE:-enp3s0}" -p tcp --dport 443 -j REDIRECT --to-port 10443
-sudo iptables-save -f /etc/iptables/iptables.rules
+cat <<EOF | sudo tee /etc/iptables/iptables.rules
+*nat
+-A PREROUTING -i enp3s0 -p tcp -m tcp --dport 80 -j REDIRECT --to-ports 10080
+-A PREROUTING -i enp3s0 -p tcp -m tcp --dport 443 -j REDIRECT --to-ports 10443
+COMMIT
+EOF
 sudo systemctl enable --now iptables
 
 # Enable ip forwarding
