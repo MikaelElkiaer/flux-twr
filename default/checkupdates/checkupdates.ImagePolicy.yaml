@@ -8,4 +8,4 @@ spec:
     namespace: default
   policy:
     semver:
-      range: 1.x.x
+      range: 2.x.x
