@@ -32,7 +32,7 @@ spec:
             sizeLimit: 100Mi
       kind: DaemonSet
     image:
-      tag: 2.10.6 # {"$imagepolicy": "traefik:traefik:tag"}
+      tag: 2.10.7 # {"$imagepolicy": "traefik:traefik:tag"}
     ingressRoute:
       dashboard:
         annotations:
