@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: homeassistant
-          image: ghcr.io/home-assistant/home-assistant:2023.11.3 # {"$imagepolicy": "home-automation:homeassistant"}
+          image: ghcr.io/home-assistant/home-assistant:2023.12.0 # {"$imagepolicy": "home-automation:homeassistant"}
           env:
             - name: TZ
               value: Europe/Copenhagen
