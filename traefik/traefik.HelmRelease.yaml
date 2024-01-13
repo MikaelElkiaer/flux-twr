@@ -31,8 +31,6 @@ spec:
           emptyDir:
             sizeLimit: 100Mi
       kind: DaemonSet
-    image:
-      tag: 2.10.7 # {"$imagepolicy": "traefik:traefik:tag"}
     ingressRoute:
       dashboard:
         annotations:
