@@ -7,11 +7,11 @@ spec:
   chart:
     spec:
       chart: cert-manager
-      version: 1.x.x
+      version: 1.0.0
       sourceRef:
         kind: HelmRepository
         name: jetstack
-        namespace: flux-system
+        namespace: cert-manager
   upgrade:
     crds: CreateReplace
   values:

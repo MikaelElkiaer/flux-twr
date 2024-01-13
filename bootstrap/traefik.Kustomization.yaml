@@ -1,15 +1,16 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: home-automation
+  name: traefik
   namespace: flux-system
 spec:
   dependsOn:
-    - name: sealed-secrets
+    - name: cert-manager-controller
   interval: 10m
-  path: ./home-automation
+  path: ./traefik
   prune: true
   sourceRef:
     kind: GitRepository
     name: flux-system
-  targetNamespace: home-automation
+  targetNamespace: traefik
+  wait: true
