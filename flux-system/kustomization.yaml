@@ -1,0 +1,22 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- github-status.Alert.yaml
+- github-status.Provider.yaml
+- github-token.SealedSecret.yaml
+- gotk-components.yaml
+- gotk-sync.yaml
+- helm/cert-manager-webhook-hetzner.HelmRepository.yaml
+- helm/jetstack.HelmRepository.yaml
+- helm/podinfo.HelmRepository.yaml
+- helm/prometheus-community.HelmRepository.yaml
+- helm/sealed-secrets.HelmRepository.yaml
+- helm/traefik.HelmRepository.yaml
+- kustomize/cert-manager-certs.Kustomization.yaml
+- kustomize/cert-manager-controller.Kustomization.yaml
+- kustomize/default.Kustomization.yaml
+- kustomize/home-automation.Kustomization.yaml
+- kustomize/monitoring.Kustomization.yaml
+- kustomize/proxy.Kustomization.yaml
+- kustomize/sealed-secrets.Kustomization.yaml
+- kustomize/traefik.Kustomization.yaml
