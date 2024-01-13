@@ -6,6 +6,7 @@ metadata:
 spec:
   dependsOn:
     - name: sealed-secrets
+    - name: traefik
   interval: 10m
   path: ./proxy
   prune: true
