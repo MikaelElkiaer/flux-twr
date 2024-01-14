@@ -57,20 +57,35 @@ sudo loginctl enable-linger "$(whoami)"
 # Configure port forward rules and persist
 # - rootless k3s will offset privileged ports (below 1024) by 10000
 # - these rules will allow use of the privileged ports, redirected to the offset equivalents
+
+# iptables
+sudo apt install --yes iptables
+sudo systemctl enable --now iptables
 cat <<EOF | sudo tee /etc/iptables/iptables.rules
 *nat
 -A PREROUTING -i enp3s0 -p tcp -m tcp --dport 80 -j REDIRECT --to-ports 10080
 -A PREROUTING -i enp3s0 -p tcp -m tcp --dport 443 -j REDIRECT --to-ports 10443
 COMMIT
 EOF
-sudo systemctl enable --now iptables
+
+# nftables
+sudo apt install --yes nftables
+sudo systemctl enable --now nftables
+cat <<EOF | sudo tee --append /etc/nftables.conf
+table ip nat {
+        chain prerouting {
+                type nat hook prerouting priority dstnat; policy accept;
+                iifname "enp3s0" tcp dport 80 counter packets 0 bytes 0 redirect to :10080
+                iifname "enp3s0" tcp dport 443 counter packets 3 bytes 156 redirect to :10443
+        }
+}
+EOF
 
 # Enable ip forwarding
 # - in theory, this should allow resolving of source IP for proxied requests
 # - in practice, still not able to do this
 cat <<EOF | sudo tee /etc/sysctl.conf
 net.ipv4.ip_forward=1
-net.ipv4.ip_unprivileged_port_start = 80
 net.ipv6.conf.all.forwarding=1
 EOF
 sudo sysctl --system
