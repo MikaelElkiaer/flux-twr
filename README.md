@@ -98,6 +98,7 @@ sudo sysctl --system
 cat <<EOF | sudo tee /etc/udev/rules.d/99-perm.rules
 SUBSYSTEMS=="usb", KERNEL=="ttyACM*", ATTRS{serial}=="20221101110016", OWNER="me"
 EOF
+sudo udevadm control --reload
 ```
 
 ## Bootstrap FluxCD
