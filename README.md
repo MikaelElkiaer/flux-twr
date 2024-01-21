@@ -96,11 +96,11 @@ sudo sysctl --system
 ```bash
 # Give user ownership of Zigbee USB dongle
 cat <<EOF | sudo tee /etc/udev/rules.d/99-perm.rules
-SUBSYSTEMS=="usb", KERNEL=="ttyACM*", ATTRS{serial}=="20221101110016", OWNER="me"
+SUBSYSTEMS=="usb", KERNEL=="ttyACM*", ATTRS{serial}=="20221101110016", OWNER="$(whoami)"
 EOF
 sudo udevadm control --reload
 # A possible alternative
-sudo usermod -aG dialout me
+sudo usermod -aG dialout "$(whoami)"
 ```
 
 ## Bootstrap FluxCD
