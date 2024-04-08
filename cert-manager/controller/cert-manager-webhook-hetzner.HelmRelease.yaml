@@ -7,11 +7,11 @@ spec:
   chart:
     spec:
       chart: cert-manager-webhook-hetzner
-      version: 1.x.x
+      version: 1.3.0
       sourceRef:
         kind: HelmRepository
         name: cert-manager-webhook-hetzner
-        namespace: flux-system
+        namespace: cert-manager
   dependsOn:
     - name: cert-manager
   upgrade:

@@ -14,3 +14,4 @@ spec:
     kind: GitRepository
     name: flux-system
   targetNamespace: cert-manager
+  wait: true
