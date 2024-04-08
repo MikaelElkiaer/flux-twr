@@ -71,12 +71,15 @@ EOF
 # nftables
 sudo apt install --yes nftables
 sudo systemctl enable --now nftables
-cat <<EOF | sudo tee --append /etc/nftables.conf
+cat <<EOF | sudo tee /etc/sysconfig/nftables.conf
+include "/etc/nftables/k3s.nft"
+EOF
+cat <<EOF | sudo tee --append /etc/nftables/k3s.nft
 table ip nat {
         chain prerouting {
                 type nat hook prerouting priority dstnat; policy accept;
-                iifname "enp3s0" tcp dport 80 counter packets 0 bytes 0 redirect to :10080
-                iifname "enp3s0" tcp dport 443 counter packets 3 bytes 156 redirect to :10443
+                iifname "enp3s0" tcp dport 80 redirect to :10080
+                iifname "enp3s0" tcp dport 443 redirect to :10443
         }
 }
 EOF
