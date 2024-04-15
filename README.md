@@ -12,6 +12,10 @@ sudo apt install --yes unattended-upgrades
 # SSH access
 sudo apt install --yes ssh
 sudo systemctl enable --now ssh
+
+# System clock sync
+sudo apt install systemd-timesyncd
+sudo timedatectl set-ntp true
 ```
 
 ## Bootstrap rootless k3s
