@@ -58,23 +58,9 @@ sudo loginctl enable-linger "$(whoami)"
 # - rootless k3s will offset privileged ports (below 1024) by 10000
 # - these rules will allow use of the privileged ports, redirected to the offset equivalents
 
-# iptables
-sudo apt install --yes iptables
-sudo systemctl enable --now iptables
-cat <<EOF | sudo tee /etc/iptables/iptables.rules
-*nat
--A PREROUTING -i enp3s0 -p tcp -m tcp --dport 80 -j REDIRECT --to-ports 10080
--A PREROUTING -i enp3s0 -p tcp -m tcp --dport 443 -j REDIRECT --to-ports 10443
-COMMIT
-EOF
-
 # nftables
 sudo apt install --yes nftables
-sudo systemctl enable --now nftables
-cat <<EOF | sudo tee /etc/sysconfig/nftables.conf
-include "/etc/nftables/k3s.nft"
-EOF
-cat <<EOF | sudo tee --append /etc/nftables/k3s.nft
+cat <<EOF | sudo tee --append /etc/nftables.conf
 table ip nat {
         chain prerouting {
                 type nat hook prerouting priority dstnat; policy accept;
@@ -83,6 +69,7 @@ table ip nat {
         }
 }
 EOF
+sudo systemctl enable --now nftables
 
 # Enable ip forwarding
 # - in theory, this should allow resolving of source IP for proxied requests
@@ -94,7 +81,7 @@ EOF
 sudo sysctl --system
 ```
 
-## Set up for home assistant
+## Set-up for home automation
 
 ```bash
 # Give user ownership of Zigbee USB dongle
