@@ -7,11 +7,11 @@ spec:
   chart:
     spec:
       chart: traefik
-      version: 23.x.x
+      version: 26.0.0
       sourceRef:
         kind: HelmRepository
         name: traefik
-        namespace: flux-system
+        namespace: traefik
   upgrade:
     crds: CreateReplace
   values:
@@ -31,8 +31,6 @@ spec:
           emptyDir:
             sizeLimit: 100Mi
       kind: DaemonSet
-    image:
-      tag: 2.10.7 # {"$imagepolicy": "traefik:traefik:tag"}
     ingressRoute:
       dashboard:
         annotations:
@@ -83,7 +81,8 @@ spec:
           trustedIPs:
             - 10.41.0.0/16
             - 10.42.0.0/16
-        redirectTo: websecure
+        redirectTo:
+          port: websecure
       websecure:
         forwardedHeaders:
           trustedIPs:
@@ -95,7 +94,7 @@ spec:
             - 10.42.0.0/16
     service:
       externalIPs:
-        - 192.168.1.136
+        - 192.168.1.154
       spec:
         externalTrafficPolicy: Local
     tlsStore:

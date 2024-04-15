@@ -1,0 +1,17 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: proxy
+  namespace: flux-system
+spec:
+  dependsOn:
+    - name: sealed-secrets
+    - name: traefik
+  interval: 10m
+  path: ./proxy
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  targetNamespace: proxy
+  wait: true

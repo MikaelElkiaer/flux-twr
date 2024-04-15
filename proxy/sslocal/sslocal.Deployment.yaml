@@ -5,7 +5,7 @@ metadata:
     app: sslocal
   name: sslocal
 spec:
-  replicas: 1
+  replicas: 0
   selector:
     matchLabels:
       app: sslocal
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: sslocal
-          image: ghcr.io/shadowsocks/sslocal-rust:v1.17.1 # {"$imagepolicy": "proxy:sslocal"}
+          image: ghcr.io/shadowsocks/sslocal-rust:v1.18.2 # {"$imagepolicy": "proxy:sslocal"}
           ports:
             - name: socks5-tcp
               containerPort: 1080

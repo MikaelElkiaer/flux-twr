@@ -5,7 +5,7 @@ metadata:
     app: gluetun
   name: gluetun
 spec:
-  replicas: 1
+  replicas: 0
   selector:
     matchLabels:
       app: gluetun
@@ -22,7 +22,7 @@ spec:
           envFrom:
             - secretRef:
                 name: wireguard-config
-          image: docker.io/qmcgaw/gluetun:v3.37.0 # {"$imagepolicy": "proxy:gluetun"}
+          image: docker.io/qmcgaw/gluetun:v3.38.0 # {"$imagepolicy": "proxy:gluetun"}
           ports:
             - name: control
               containerPort: 8000
