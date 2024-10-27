@@ -4,7 +4,6 @@ metadata:
   name: zigbee2mqtt
 data:
   configuration.yaml: |-
-    homeassistant: true
     permit_join: true
     mqtt:
       base_topic: zigbee2mqtt
