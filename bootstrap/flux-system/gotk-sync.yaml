@@ -8,7 +8,7 @@ metadata:
 spec:
   interval: 1m0s
   ref:
-    branch: debian
+    branch: main
   secretRef:
     name: flux-system
   url: ssh://git@github.com/mikaelelkiaer/flux-twr.git
@@ -20,7 +20,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m0s
-  path: ./bootstrap/
+  path: ./bootstrap
   prune: true
   sourceRef:
     kind: GitRepository
