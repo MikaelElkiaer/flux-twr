@@ -16,6 +16,10 @@ sudo systemctl enable --now ssh
 # System clock sync
 sudo apt install systemd-timesyncd
 sudo timedatectl set-ntp true
+
+# Automatic spinning down of disks
+sudo apt install hd-idle
+sudo systemctl enable --now hd-idle
 ```
 
 ## Bootstrap rootless k3s
