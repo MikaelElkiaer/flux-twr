@@ -13,12 +13,16 @@ spec:
         patches:
           - target:
               kind: DaemonSet
-            # TODO: Remove workaround once fixed in chart
-            # - details here: https://github.com/fluxcd/flux2/issues/4910#issuecomment-2286684282
             patch: |
               - op: replace
                 path: /metadata/labels/app.kubernetes.io~1version
-                value: latest
+                value: 0.14.0
               - op: replace
                 path: /spec/template/metadata/labels/app.kubernetes.io~1version
-                value: latest
+                value: 0.14.0
+  values:
+    engine:
+      image:
+        ref: registry.dagger.io/engine:v0.14.0
+# TODO: Remove workaround once fixed in chart
+# - details here: https://github.com/fluxcd/flux2/issues/4910#issuecomment-2286684282
