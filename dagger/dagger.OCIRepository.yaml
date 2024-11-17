@@ -7,5 +7,5 @@ spec:
   interval: 1m0s
   provider: generic
   ref:
-    tag: 0.14.0
+    tag: v0.14.0
   url: oci://registry.dagger.io/dagger-helm
