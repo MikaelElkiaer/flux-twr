@@ -17,5 +17,8 @@ spec:
             # - details here: https://github.com/fluxcd/flux2/issues/4910#issuecomment-2286684282
             patch: |
               - op: replace
+                path: /metadata/labels/app.kubernetes.io~1version
+                value: latest
+              - op: replace
                 path: /spec/template/metadata/labels/app.kubernetes.io~1version
                 value: latest
