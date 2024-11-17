@@ -3,7 +3,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: dagger
-  namespace: flux-system
+  namespace: dagger
 spec:
   chartRef:
     kind: OCIRepository
