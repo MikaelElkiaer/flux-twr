@@ -3,7 +3,6 @@ apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: OCIRepository
 metadata:
   name: dagger
-  namespace: dagger
 spec:
   interval: 1m0s
   provider: generic
