@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: node-red
-          image: docker.io/nodered/node-red:3.1.14 # {"$imagepolicy": "home-automation:node-red"}
+          image: docker.io/nodered/node-red:3.1.15 # {"$imagepolicy": "home-automation:node-red"}
           env:
             - name: TZ
               value: Europe/Copenhagen
