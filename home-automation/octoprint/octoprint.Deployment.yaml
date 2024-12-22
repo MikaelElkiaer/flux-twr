@@ -32,6 +32,8 @@ spec:
               mountPath: /octoprint
             - name: ttyusb
               mountPath: /dev/ttyUSB0
+            - name: udev
+              mountPath: /run/udev
           livenessProbe:
             tcpSocket:
               port: 80
@@ -57,6 +59,9 @@ spec:
         - name: octoprint-data
           persistentVolumeClaim:
             claimName: octoprint-data
+        - name: udev
+          hostPath:
+            path: /run/udev
         - name: ttyusb
           hostPath:
             path: /dev/serial/by-id/usb-1a86_USB_Serial-if00-port0
