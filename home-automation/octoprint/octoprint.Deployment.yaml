@@ -18,6 +18,8 @@ spec:
     spec:
       containers:
         - env:
+            # WARN: Port needs to be explicitly set
+            # - see https://github.com/OctoPrint/octoprint-docker/issues/160
             - name: OCTOPRINT_PORT
               value: "5000"
           name: octoprint
