@@ -9,5 +9,5 @@ spec:
     mediaType: "application/vnd.cncf.helm.chart.content.v1.tar+gzip"
     operation: copy
   ref:
-    tag: 0.15.1
+    tag: 0.15.1@sha256:4377cbecb547daa97ee9f698e83fa7d37792205e5e20418d9983732adb471395
   url: oci://registry.dagger.io/dagger-helm
