@@ -1,7 +1,0 @@
-apiVersion: image.toolkit.fluxcd.io/v1beta2
-kind: ImageRepository
-metadata:
-  name: zigbee2mqtt
-spec:
-  image: docker.io/koenkk/zigbee2mqtt
-  interval: 10m0s

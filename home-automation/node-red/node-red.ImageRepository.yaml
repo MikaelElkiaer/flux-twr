@@ -1,7 +1,0 @@
-apiVersion: image.toolkit.fluxcd.io/v1beta2
-kind: ImageRepository
-metadata:
-  name: node-red
-spec:
-  image: docker.io/nodered/node-red
-  interval: 10m0s
