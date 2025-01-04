@@ -12,6 +12,7 @@ data:
       reject_unauthorized: true
       version: 4
     serial:
+      adapter: ember
       port: /dev/ttyACM0
     advanced:
       homeassistant_legacy_entity_attributes: false
