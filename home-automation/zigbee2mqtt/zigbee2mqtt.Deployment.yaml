@@ -35,7 +35,7 @@ spec:
               mountPath: /data
       containers:
         - name: zigbee2mqtt
-          image: docker.io/koenkk/zigbee2mqtt:2.0.0@sha256:6105a3a01a66bbfb98909a7c309d0707ec7b41728ac15d399747077225231545 # {"$imagepolicy": "home-automation:zigbee2mqtt"}
+          image: docker.io/koenkk/zigbee2mqtt:2.0.0@sha256:6105a3a01a66bbfb98909a7c309d0707ec7b41728ac15d399747077225231545
           env:
             - name: TZ
               value: Europe/Copenhagen
