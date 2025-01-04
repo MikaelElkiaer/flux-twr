@@ -16,6 +16,23 @@ spec:
       labels:
         app: zigbee2mqtt
     spec:
+      initContainers:
+        - name: merge-configuration
+          command:
+            - sh
+            - -c
+            - | #@ts=sh
+              set -e
+              apk --no-cache add yq-go
+              touch /data/configuration.yaml
+              yq --inplace '. *= load("/tmp/configuration.yaml")' /data/configuration.yaml
+          image: docker.io/library/alpine
+          volumeMounts:
+            - name: zigbee2mqtt-config
+              mountPath: /tmp/configuration.yaml
+              subPath: configuration.yaml
+            - name: zigbee2mqtt-data
+              mountPath: /data
       containers:
         - name: zigbee2mqtt
           image: docker.io/koenkk/zigbee2mqtt:2.0.0@sha256:6105a3a01a66bbfb98909a7c309d0707ec7b41728ac15d399747077225231545 # {"$imagepolicy": "home-automation:zigbee2mqtt"}
@@ -30,9 +47,6 @@ spec:
           volumeMounts:
             - name: zigbee2mqtt-data
               mountPath: /data
-            - name: zigbee2mqtt-config
-              mountPath: /data/configuration.yaml
-              subPath: configuration.yaml
             - name: zigbee2mqtt-udev
               mountPath: /run/udev
             - name: ttyacm
