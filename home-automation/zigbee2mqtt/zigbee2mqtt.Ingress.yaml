@@ -4,6 +4,12 @@ metadata:
   name: zigbee2mqtt
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/description: Manage Zigbee devices via MQTT
+    gethomepage.dev/group: Automation
+    gethomepage.dev/icon: zigbee2mqtt.png
+    gethomepage.dev/name: Zigbee2MQTT
+    gethomepage.dev/ping: "https://grafana.home.elkiaer.net"
 spec:
   rules:
     - host: z2mqtt.home.elkiaer.net
