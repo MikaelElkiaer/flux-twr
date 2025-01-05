@@ -9,7 +9,6 @@ metadata:
     gethomepage.dev/group: Automation
     gethomepage.dev/icon: node-red.png
     gethomepage.dev/name: Node-RED
-    gethomepage.dev/ping: "https://nodered.home.elkiaer.net"
 spec:
   rules:
     - host: nodered.home.elkiaer.net

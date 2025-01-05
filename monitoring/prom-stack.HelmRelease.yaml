@@ -27,7 +27,6 @@ spec:
           gethomepage.dev/group: System
           gethomepage.dev/icon: grafana.png
           gethomepage.dev/name: Grafana
-          gethomepage.dev/ping: "https://grafana.home.elkiaer.net/api/health"
           gethomepage.dev/widget.type: "grafana"
           gethomepage.dev/widget.url: "https://grafana.home.elkiaer.net"
           gethomepage.dev/widget.username: '{{`{{HOMEPAGE_VAR_GRAFANA_USERNAME}}`}}'

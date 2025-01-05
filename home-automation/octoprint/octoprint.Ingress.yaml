@@ -9,7 +9,6 @@ metadata:
     gethomepage.dev/group: Automation
     gethomepage.dev/icon: octoprint.png
     gethomepage.dev/name: OctoPrint
-    gethomepage.dev/ping: "https://octoprint.home.elkiaer.net"
 spec:
   rules:
     - host: octoprint.home.elkiaer.net
