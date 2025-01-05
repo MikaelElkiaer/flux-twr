@@ -26,7 +26,6 @@ spec:
               apk --no-cache add yq-go
               touch /data/configuration.yaml
               yq --inplace '. *= load("/tmp/configuration.yaml")' /data/configuration.yaml
-              yq --inplace '.serial.adapter="ember"' /data/configuration.yaml
           image: docker.io/library/alpine:3.21.0
           volumeMounts:
             - name: zigbee2mqtt-config

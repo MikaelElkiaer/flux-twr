@@ -15,6 +15,7 @@ data:
       adapter: ember
       port: /dev/ttyACM0
     advanced:
+      baudrate: 230400
       homeassistant_legacy_entity_attributes: false
       legacy_api: false
       legacy_availability_payload: false
