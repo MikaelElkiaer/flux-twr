@@ -9,7 +9,7 @@ metadata:
     gethomepage.dev/group: Automation
     gethomepage.dev/icon: zigbee2mqtt.png
     gethomepage.dev/name: Zigbee2MQTT
-    gethomepage.dev/ping: "https://grafana.home.elkiaer.net"
+    gethomepage.dev/ping: "https://z2mqtt.home.elkiaer.net"
 spec:
   rules:
     - host: z2mqtt.home.elkiaer.net
