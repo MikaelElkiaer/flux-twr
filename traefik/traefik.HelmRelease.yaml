@@ -45,6 +45,7 @@ spec:
           gethomepage.dev/widget.url: "https://traefik.home.elkiaer.net"
         entryPoints: ["web", "websecure"]
         matchRule: Host(`traefik.home.elkiaer.net`) && PathPrefix(`/dashboard`, `/api`)
+      enabled: true
     logs:
       access:
         enabled: true
