@@ -27,6 +27,7 @@ spec:
           gethomepage.dev/group: System
           gethomepage.dev/icon: grafana.png
           gethomepage.dev/name: Grafana
+          gethomepage.dev/pod-selector: app.kubernetes.io/name=grafana
           gethomepage.dev/widget.type: "grafana"
           gethomepage.dev/widget.url: "https://grafana.home.elkiaer.net"
           gethomepage.dev/widget.username: '{{`{{HOMEPAGE_VAR_GRAFANA_USERNAME}}`}}'
