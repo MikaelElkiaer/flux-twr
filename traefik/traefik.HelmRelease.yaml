@@ -43,9 +43,9 @@ spec:
           gethomepage.dev/pod-selector: app.kubernetes.io/name=traefik
           gethomepage.dev/widget.type: "traefik"
           gethomepage.dev/widget.url: "https://traefik.home.elkiaer.net"
+        enabled: true
         entryPoints: ["web", "websecure"]
         matchRule: Host(`traefik.home.elkiaer.net`) && PathPrefix(`/dashboard`, `/api`)
-      enabled: true
     logs:
       access:
         enabled: true
