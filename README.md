@@ -67,13 +67,25 @@ sudo loginctl enable-linger "$(whoami)"
 # - these rules will allow use of the privileged ports, redirected to the offset equivalents
 
 # nftables
+# - firewall rule to redirect localhost connections
+# - nat rule to redirect network connections
 sudo apt install --yes nftables
-cat <<EOF | sudo tee --append /etc/nftables.conf
+cat <<EOF | sudo tee /etc/nftables.conf
+flush ruleset
+
+table inet firewall {
+        chain loopback-nat {
+                type nat hook output priority -100; policy accept;
+                oif lo tcp dport 80 counter redirect to :10080
+                oif lo tcp dport 443 counter redirect to :10443
+        }
+}
+
 table ip nat {
         chain prerouting {
                 type nat hook prerouting priority dstnat; policy accept;
-                iifname "enp3s0" tcp dport 80 redirect to :10080
-                iifname "enp3s0" tcp dport 443 redirect to :10443
+                iifname "enp3s0" tcp dport 80 counter redirect to :10080
+                iifname "enp3s0" tcp dport 443 counter redirect to :10443
         }
 }
 EOF
