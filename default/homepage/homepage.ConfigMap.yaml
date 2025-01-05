@@ -10,8 +10,6 @@ data:
   settings.yaml: ""
   bookmarks.yaml: ""
   services.yaml: |
-    - Automation:
-    - Media:
     - System:
       - OPNSense:
           icon: opnsense.png
