@@ -4,6 +4,12 @@ metadata:
   name: octoprint
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/description: 3D printer controller
+    gethomepage.dev/group: Automation
+    gethomepage.dev/icon: octoprint.png
+    gethomepage.dev/name: OctoPrint
+    gethomepage.dev/ping: "https://octoprint.home.elkiaer.net"
 spec:
   rules:
     - host: octoprint.home.elkiaer.net
