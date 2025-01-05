@@ -2,19 +2,19 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: octoprint
+    app.kubernetes.io/name: octoprint
   name: octoprint
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: octoprint
+      app.kubernetes.io/name: octoprint
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
-        app: octoprint
+        app.kubernetes.io/name: octoprint
     spec:
       containers:
         - env:

@@ -4,7 +4,7 @@ metadata:
   name: mosquitto
 spec:
   selector:
-    app: mosquitto
+    app.kubernetes.io/name: mosquitto
   ports:
   - name: mqtt
     port: 1883

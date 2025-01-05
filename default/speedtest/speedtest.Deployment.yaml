@@ -2,16 +2,16 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: speedtest
+    app.kubernetes.io/name: speedtest
   name: speedtest
 spec:
   selector:
     matchLabels:
-      app: speedtest
+      app.kubernetes.io/name: speedtest
   template:
     metadata:
       labels:
-        app: speedtest
+        app.kubernetes.io/name: speedtest
     spec:
       containers:
         - env:

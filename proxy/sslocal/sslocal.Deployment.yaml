@@ -2,17 +2,17 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: sslocal
+    app.kubernetes.io/name: sslocal
   name: sslocal
 spec:
   replicas: 0
   selector:
     matchLabels:
-      app: sslocal
+      app.kubernetes.io/name: sslocal
   template:
     metadata:
       labels:
-        app: sslocal
+        app.kubernetes.io/name: sslocal
     spec:
       containers:
         - name: sslocal

@@ -2,19 +2,19 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: node-red
+    app.kubernetes.io/name: node-red
   name: node-red
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: node-red
+      app.kubernetes.io/name: node-red
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
-        app: node-red
+        app.kubernetes.io/name: node-red
     spec:
       containers:
         - name: node-red

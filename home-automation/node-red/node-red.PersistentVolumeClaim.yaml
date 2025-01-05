@@ -2,7 +2,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   labels:
-    app: node-red
+    app.kubernetes.io/name: node-red
   name: node-red-data
 spec:
   accessModes:

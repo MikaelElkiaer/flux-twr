@@ -2,11 +2,11 @@ kind: Service
 apiVersion: v1
 metadata:
   labels:
-    app: sslocal
+    app.kubernetes.io/name: sslocal
   name: sslocal
 spec:
   selector:
-    app: sslocal
+    app.kubernetes.io/name: sslocal
   ports:
     - name: socks5-tcp
       port: 1080

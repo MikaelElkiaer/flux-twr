@@ -2,7 +2,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   labels:
-    app: octoprint
+    app.kubernetes.io/name: octoprint
   name: octoprint-data
 spec:
   accessModes:

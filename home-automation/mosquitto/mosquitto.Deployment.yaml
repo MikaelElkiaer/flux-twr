@@ -5,11 +5,11 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: mosquitto
+      app.kubernetes.io/name: mosquitto
   template:
     metadata:
       labels:
-        app: mosquitto
+        app.kubernetes.io/name: mosquitto
     spec:
       containers:
         - name: mosquitto

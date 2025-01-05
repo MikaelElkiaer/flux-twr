@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: node-red
+    app.kubernetes.io/name: node-red
   name: node-red
 spec:
   ports:
@@ -10,4 +10,4 @@ spec:
       port: 8080
       targetPort: http
   selector:
-    app: node-red
+    app.kubernetes.io/name: node-red

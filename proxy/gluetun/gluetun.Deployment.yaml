@@ -2,17 +2,17 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: gluetun
+    app.kubernetes.io/name: gluetun
   name: gluetun
 spec:
   replicas: 0
   selector:
     matchLabels:
-      app: gluetun
+      app.kubernetes.io/name: gluetun
   template:
     metadata:
       labels:
-        app: gluetun
+        app.kubernetes.io/name: gluetun
     spec:
       containers:
         - name: gluetun

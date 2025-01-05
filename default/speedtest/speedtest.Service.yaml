@@ -2,11 +2,11 @@ kind: Service
 apiVersion: v1
 metadata:
   labels:
-    app: speedtest
+    app.kubernetes.io/name: speedtest
   name: speedtest
 spec:
   selector:
-    app: speedtest
+    app.kubernetes.io/name: speedtest
   ports:
     - name: http
       port: 9798

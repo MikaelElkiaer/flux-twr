@@ -2,11 +2,11 @@ kind: Service
 apiVersion: v1
 metadata:
   labels:
-    app: gluetun
+    app.kubernetes.io/name: gluetun
   name: gluetun
 spec:
   selector:
-    app: gluetun
+    app.kubernetes.io/name: gluetun
   ports:
     - name: control
       port: 8000

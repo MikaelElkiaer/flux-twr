@@ -2,19 +2,19 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: zigbee2mqtt
+    app.kubernetes.io/name: zigbee2mqtt
   name: zigbee2mqtt
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: zigbee2mqtt
+      app.kubernetes.io/name: zigbee2mqtt
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
-        app: zigbee2mqtt
+        app.kubernetes.io/name: zigbee2mqtt
     spec:
       initContainers:
         - name: merge-configuration
