@@ -26,7 +26,7 @@ spec:
               apk --no-cache add yq-go
               touch /data/configuration.yaml
               yq --inplace '. *= load("/tmp/configuration.yaml")' /data/configuration.yaml
-          image: docker.io/library/alpine:3.21.0
+          image: docker.io/library/alpine:3.21.0@sha256:21dc6063fd678b478f57c0e13f47560d0ea4eeba26dfc947b2a4f81f686b9f45
           volumeMounts:
             - name: zigbee2mqtt-config
               mountPath: /tmp/configuration.yaml
