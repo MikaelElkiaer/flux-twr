@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: node-red
-          image: docker.io/nodered/node-red:4.0.8@sha256:94926616c16e016e2468c2c83a8d9040ffdef1999e54a2b36e54986d37de2f7f
+          image: docker.io/nodered/node-red:4.0.9@sha256:7a3e18f29578feb271bb8daab4379e4ebd355b87ea64b699ce74e6ff49d907aa
           env:
             - name: TZ
               value: Europe/Copenhagen
