@@ -18,6 +18,8 @@ sudo apt install systemd-timesyncd
 sudo timedatectl set-ntp true
 
 # Automatic spinning down of disks
+# TODO: Document how to enable
+# by setting HD_IDLE_OPTS
 sudo apt install hd-idle
 sudo systemctl enable --now hd-idle
 ```
