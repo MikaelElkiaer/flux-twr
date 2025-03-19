@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: sslocal
-          image: ghcr.io/shadowsocks/sslocal-rust:v1.22.0@sha256:2732f1e3221633c858ed1a11378232e8b4d4ef348105fc5c26bb033349e506a0
+          image: ghcr.io/shadowsocks/sslocal-rust:v1.23.0@sha256:9ef9a8f5d933d17dade6fd0ce7c37cb1be6580e370e5b40727cfba08c353f722
           ports:
             - name: socks5-tcp
               containerPort: 1080
