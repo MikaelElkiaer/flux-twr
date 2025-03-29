@@ -21,6 +21,7 @@ data:
       log_level: debug
     device_options:
       legacy: false
+      retain: true
     frontend:
       port: 8080
 
