@@ -23,7 +23,7 @@ spec:
             - name: HOMEPAGE_ALLOWED_HOSTS
               value: home.elkiaer.net
           name: homepage
-          image: ghcr.io/gethomepage/homepage:v1.1.1@sha256:be49a60307fcce7909acdaf2f3b2f3d168a0468d62869bf72d380625dde91fb9
+          image: ghcr.io/gethomepage/homepage:v1.2.0@sha256:5e6bcbb595c4e857540577135e0f8b3ffc2e97c23d6e0ddc7df183de5bfdd442
           ports:
             - name: http
               containerPort: 3000
