@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: gotify
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/description: Push Notifications
+    gethomepage.dev/group: System
+    gethomepage.dev/icon: gotify.png
+    gethomepage.dev/name: gotify
+spec:
+  rules:
+    - host: gotify.home.elkiaer.net
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: gotify
+                port:
+                  name: http
