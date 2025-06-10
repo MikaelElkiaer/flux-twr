@@ -23,7 +23,7 @@ spec:
             - name: OCTOPRINT_PORT
               value: "5000"
           name: octoprint
-          image: docker.io/octoprint/octoprint:1.11.1@sha256:39fc1137ba91e4b2840a702490e27ae0c912604857bd182d629281e27964bab4
+          image: docker.io/octoprint/octoprint:1.11.2@sha256:cfd0d2dab937514119619b6abb62c22cd31193aef45cd0cf5415436100870d2a
           ports:
             - name: http
               containerPort: 80
