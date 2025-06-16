@@ -1,0 +1,13 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: OCIRepository
+metadata:
+  name: dagger
+spec:
+  interval: 1m0s
+  layerSelector:
+    mediaType: "application/vnd.cncf.helm.chart.content.v1.tar+gzip"
+    operation: copy
+  ref:
+    tag: 0.18.10@sha256:9fb477d73c68336283d438c78f08f4f2823ae00f41f810f79a06c0339c1bf26c
+  url: oci://registry.dagger.io/dagger-helm
