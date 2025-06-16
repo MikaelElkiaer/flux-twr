@@ -23,6 +23,6 @@ spec:
   values:
     engine:
       image:
-        ref: registry.dagger.io/engine:v0.14.0
-# TODO: Remove workaround once fixed in chart
-# - details here: https://github.com/fluxcd/flux2/issues/4910#issuecomment-2286684282
+        # TODO: Remove workaround once fixed in chart
+        # - details here: https://github.com/fluxcd/flux2/issues/4910#issuecomment-2286684282
+        ref: registry.dagger.io/engine:v0.18.10
