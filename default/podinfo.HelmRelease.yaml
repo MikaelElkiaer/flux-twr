@@ -11,7 +11,7 @@ spec:
         kind: HelmRepository
         name: podinfo
         namespace: default
-      version: 6.9.1
+      version: 6.9.2
   values:
     ingress:
       enabled: true
