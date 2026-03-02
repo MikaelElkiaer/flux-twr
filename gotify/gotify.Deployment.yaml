@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: gotify
-          image: ghcr.io/gotify/server:2.7.3@sha256:2ae0e4e689f183137c8247884382fcb174d5a72253ce1897e7e5267090093fc8
+          image: ghcr.io/gotify/server:2.9.1@sha256:a3af47067ce6aad76aadf5ba32d6ddfecd1ae576a961359f039fd1831e8b7652
           ports:
             - name: http
               containerPort: 80
