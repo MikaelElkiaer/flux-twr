@@ -6,7 +6,8 @@
   "flux": {
     "managerFilePatterns": [
       "/\\.yaml$/"
-    ]
+    ],
+    "pinDigests": true
   },
   "kubernetes": {
     "managerFilePatterns": [
