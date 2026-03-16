@@ -11,6 +11,9 @@
   "kubernetes": {
     "managerFilePatterns": [
       "/\\.yaml$/"
+    ],
+    "ignorePaths": [
+      "bootstrap/**"
     ]
   }
 }
