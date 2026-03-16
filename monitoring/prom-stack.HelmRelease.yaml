@@ -35,6 +35,13 @@ spec:
         dashboards:
           labelValue: "1"
           searchNamespace: "ALL"
+    # INFO: Not running as pods in k3s
+    kubeControllerManager:
+      enabled: false
+    kubeScheduler:
+      enabled: false
+    kubeProxy:
+      enabled: false
     prometheus:
       prometheusSpec:
         storageSpec:
