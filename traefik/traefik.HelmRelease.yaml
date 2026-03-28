@@ -71,8 +71,7 @@ spec:
           trustedIPs:
             - 10.41.0.0/16
             - 10.42.0.0/16
-        redirectTo:
-          port: websecure
+        redirectTo: websecure
       websecure:
         forwardedHeaders:
           trustedIPs:
