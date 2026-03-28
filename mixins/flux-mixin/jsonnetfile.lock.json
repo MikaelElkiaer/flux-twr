@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "dependencies": [
+    {
+      "source": {
+        "git": {
+          "remote": "https://github.com/fluxcd-community/flux-mixin.git",
+          "subdir": ""
+        }
+      },
+      "version": "5f69de628466706e76d71ce2ba588d40530d5818",
+      "sum": "Vpdbn5yq+YBRKE5kl20CMv5lXes35DfIuebRCXgjOL4="
+    },
+    {
+      "source": {
+        "git": {
+          "remote": "https://github.com/grafana/grafonnet-lib.git",
+          "subdir": ""
+        }
+      },
+      "version": "a1d61cce1da59c71409b99b5c7568511fec661ea",
+      "sum": "SDLe+mmLFdHXwtVT37w7zGQ2cnVNmO4u8kpWSj6Ml6A="
+    }
+  ],
+  "legacyImports": false
+}
