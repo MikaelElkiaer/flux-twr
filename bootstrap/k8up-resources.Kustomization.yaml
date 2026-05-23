@@ -1,13 +1,13 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: k8sup-controller
+  name: k8up-resources
   namespace: flux-system
 spec:
   dependsOn:
-    - name: external-secrets-config
+    - name: k8up-controller
   interval: 10m
-  path: ./backup/k8sup-controller
+  path: ./backup/k8up-resources
   prune: true
   sourceRef:
     kind: GitRepository
