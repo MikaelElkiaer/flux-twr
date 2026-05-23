@@ -1,0 +1,8 @@
+---
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: bitwarden-selfsigned-issuer
+  namespace: kube-system
+spec:
+  selfSigned: {}
