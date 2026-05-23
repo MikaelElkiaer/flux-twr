@@ -6,7 +6,7 @@ metadata:
 spec:
   dependsOn:
     - name: cert-manager-controller
-    - name: sealed-secrets
+    - name: external-secrets-config
   interval: 10m
   path: ./cert-manager/certs
   prune: true

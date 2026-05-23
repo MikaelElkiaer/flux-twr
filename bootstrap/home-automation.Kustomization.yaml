@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   dependsOn:
-    - name: sealed-secrets
+    - name: external-secrets-config
   interval: 10m
   path: ./home-automation
   prune: true

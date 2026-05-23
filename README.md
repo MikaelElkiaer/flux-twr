@@ -118,8 +118,8 @@ sudo usermod -aG dialout "$(whoami)"
 ## Bootstrap FluxCD
 
 ```bash
-# Restore sealed secret token
-kubectl apply --file sealed-secrets-token.yaml
+# Restore External Secrets token
+kubectl create secret generic bitwarden-sm-token --from-file=/tmp/token --namespace=kube-system
 ```
 
 ```bash
