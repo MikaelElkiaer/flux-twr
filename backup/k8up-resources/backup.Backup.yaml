@@ -7,6 +7,9 @@ spec:
   failedJobsHistoryLimit: 2
   successfulJobsHistoryLimit: 2
   backend:
+    repoPasswordSecretRef:
+      name: restic
+      key: password
     s3:
       endpoint: https://942d7eb18ddb4433389d1376141361bb.eu.r2.cloudflarestorage.com
       bucket: backup
