@@ -119,7 +119,8 @@ sudo usermod -aG dialout "$(whoami)"
 
 ```bash
 # Restore External Secrets token
-kubectl create secret generic bitwarden-sm-token --from-file=/tmp/token --namespace=kube-system
+kubectl create namespace secrets
+kubectl create secret generic bitwarden-sm-token --from-file=/tmp/token --namespace=secrets
 ```
 
 ```bash
