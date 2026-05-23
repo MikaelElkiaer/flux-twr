@@ -16,6 +16,4 @@ spec:
     crds: CreateReplace
   values:
     k8up:
-      envVars:
-        - name: BACKUP_SKIP_WITHOUT_ANNOTATION
-          value: "true"
+      skipWithoutAnnotation: false
