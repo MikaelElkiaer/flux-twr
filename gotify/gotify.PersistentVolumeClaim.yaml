@@ -3,6 +3,7 @@ kind: PersistentVolumeClaim
 metadata:
   labels:
     app.kubernetes.io/name: gotify
+    k8up.io/backup: "true"
   name: gotify-data
 spec:
   accessModes:

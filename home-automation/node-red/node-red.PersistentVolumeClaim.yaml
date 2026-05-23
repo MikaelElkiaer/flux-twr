@@ -3,6 +3,7 @@ kind: PersistentVolumeClaim
 metadata:
   labels:
     app.kubernetes.io/name: node-red
+    k8up.io/backup: "true"
   name: node-red-data
 spec:
   accessModes:

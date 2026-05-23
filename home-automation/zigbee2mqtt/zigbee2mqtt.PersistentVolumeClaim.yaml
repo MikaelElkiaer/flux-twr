@@ -3,6 +3,7 @@ kind: PersistentVolumeClaim
 metadata:
   labels:
     app.kubernetes.io/name: zigbee2mqtt
+    k8up.io/backup: "true"
   name: zigbee2mqtt-data
 spec:
   accessModes:
