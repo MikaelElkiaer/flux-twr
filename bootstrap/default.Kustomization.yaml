@@ -5,6 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   dependsOn:
+    - name: external-secrets-config
     - name: monitoring
   interval: 10m
   path: ./default
