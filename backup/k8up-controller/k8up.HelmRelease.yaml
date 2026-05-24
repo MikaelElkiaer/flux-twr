@@ -16,4 +16,4 @@ spec:
     crds: CreateReplace
   values:
     k8up:
-      skipWithoutAnnotation: false
+      skipWithoutAnnotation: true
