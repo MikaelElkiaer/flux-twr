@@ -4,6 +4,6 @@ metadata:
   name: gotify-daily
 spec:
   backup:
-    schedule: '*/5 * * * *'
+    schedule: "0 5 * * *"  # Runs at 5:00 AM every day*/5 * * * *'
     failedJobsHistoryLimit: 2
     successfulJobsHistoryLimit: 2
