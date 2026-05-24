@@ -1,0 +1,39 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: k8up
+spec:
+  interval: 10m
+  chart:
+    spec:
+      chart: k8up
+      version: 4.9.0
+      sourceRef:
+        kind: HelmRepository
+        name: k8up
+        namespace: backup
+  upgrade:
+    crds: CreateReplace
+  values:
+    k8up:
+      skipWithoutAnnotation: false
+      envVars:
+        - name: BACKUP_GLOBAL_REPO_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: restic
+              key: password
+        - name: BACKUP_GLOBAL_S3_ENDPOINT
+          value: https://942d7eb18ddb4433389d1376141361bb.eu.r2.cloudflarestorage.com
+        - name: BACKUP_GLOBAL_S3_BUCKET
+          value: backup
+        - name: BACKUP_GLOBAL_S3_ACCESS_KEY_ID
+          valueFrom:
+            secretKeyRef:
+              name: s3-credentials
+              key: accessKeyID
+        - name: BACKUP_GLOBAL_S3_SECRET_ACCESS_KEY
+          valueFrom:
+            secretKeyRef:
+              name: s3-credentials
+              key: accessKeySecret
