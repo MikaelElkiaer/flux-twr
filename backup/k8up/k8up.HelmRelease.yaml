@@ -16,7 +16,7 @@ spec:
     crds: CreateReplace
   values:
     k8up:
-      skipWithoutAnnotation: false
+      skipWithoutAnnotation: true
       envVars:
         - name: BACKUP_GLOBAL_REPO_PASSWORD
           valueFrom:
