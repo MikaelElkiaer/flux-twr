@@ -6,6 +6,7 @@ metadata:
 spec:
   dependsOn:
     - name: external-secrets-config
+    - name: k8up
   interval: 10m
   path: ./home-automation
   prune: true
