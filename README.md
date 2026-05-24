@@ -127,5 +127,5 @@ kubectl create secret generic bitwarden-sm-token --from-file=/tmp/token --namesp
 # Install flux base controllers and extra controller components
 # - this can also be used for upgrading or altering the installation
 # This will output SSH public key to be added as 'Deploy key' to the GitHub repository
-flux bootstrap git --url=ssh://git@github.com/mikaelelkiaer/flux-twr.git --branch=main --path=./bootstrap --components-extra=image-reflector-controller,image-automation-controller
+flux bootstrap git --url=ssh://git@github.com/mikaelelkiaer/flux-twr.git --branch=main --path=./bootstrap
 ```
