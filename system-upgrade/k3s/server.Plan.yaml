@@ -14,10 +14,11 @@ spec:
           - "true"
   serviceAccountName: system-upgrade
   upgrade:
-    image: rancher/k3s-upgrade
+    args:
+      - "set -e; export K3S_PID=$(ps -o pid=,ppid=,comm= | awk '$2==1 && /k3s/ {print $1}'); /usr/bin/k3s-upgrade.sh"
+    command: ["/bin/sh", "-c"]
     envs:
       - name: SYSTEM_UPGRADE_K3S_STATE_DIR
         value: /home/me/.rancher/k3s
-      - name: SYSTEM_UPGRADE_K3S_KILLALL_SCRIPT_ARGS
-        value: "--exact --parent"
+    image: rancher/k3s-upgrade
   version: v1.35.2+k3s1
