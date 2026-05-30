@@ -18,4 +18,6 @@ spec:
     envs:
       - name: SYSTEM_UPGRADE_K3S_STATE_DIR
         value: /home/me/.rancher/k3s
+      - name: SYSTEM_UPGRADE_K3S_KILLALL_SCRIPT_ARGS
+        value: "--exact --parent"
   version: v1.35.2+k3s1
