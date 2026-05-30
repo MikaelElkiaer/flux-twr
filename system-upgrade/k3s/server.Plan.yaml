@@ -1,0 +1,21 @@
+---
+apiVersion: upgrade.cattle.io/v1
+kind: Plan
+metadata:
+  name: server
+spec:
+  concurrency: 1
+  cordon: true
+  nodeSelector:
+    matchExpressions:
+      - key: node-role.kubernetes.io/control-plane
+        operator: In
+        values:
+          - "true"
+  serviceAccountName: system-upgrade
+  upgrade:
+    image: rancher/k3s-upgrade
+    envs:
+      - name: SYSTEM_UPGRADE_K3S_STATE_DIR
+        value: /home/me/.rancher/k3s
+  version: v1.35.2+k3s1
