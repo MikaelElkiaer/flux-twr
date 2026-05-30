@@ -17,14 +17,11 @@
       "bootstrap/**"
     ]
   },
-  "regexManagers": [
+  "customManagers": [
     {
-      "fileMatch": [
-        "^system-upgrade/k3s/server\\.Plan\\.yaml$"
-      ],
-      "matchStrings": [
-        "version: (?<currentValue>.*)"
-      ],
+      "customType": "regex",
+      "managerFilePatterns": ["/^system-upgrade/k3s/server\\.Plan\\.yaml$/"],
+      "matchStrings": ["version: (?<currentValue>.*)"],
       "depNameTemplate": "k3s-io/k3s",
       "datasourceTemplate": "github-releases"
     }
