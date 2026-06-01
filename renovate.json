@@ -7,7 +7,7 @@
     "managerFilePatterns": [
       "/\\.yaml$/"
     ],
-    "pinDigests": true
+    "pinDigests": false
   },
   "kubernetes": {
     "managerFilePatterns": [
