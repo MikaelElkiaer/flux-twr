@@ -14,7 +14,6 @@ spec:
           - "true"
   serviceAccountName: system-upgrade
   upgrade:
-    command: ["/bin/sh", "-c"]
     envs:
       - name: SYSTEM_UPGRADE_K3S_STATE_DIR
         value: /home/me/.rancher/k3s
