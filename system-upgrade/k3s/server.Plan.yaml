@@ -14,9 +14,6 @@ spec:
           - "true"
   serviceAccountName: system-upgrade
   upgrade:
-    command: ["/bin/sh", "-c"]
-    args:
-      - "set -e; export K3S_PID=$(ps -o pid=,ppid=,args= | awk '$2==1 && /k3s server/ {print $1}'); /bin/upgrade.sh"
     envs:
       - name: SYSTEM_UPGRADE_K3S_STATE_DIR
         value: /home/me/.rancher/k3s
