@@ -16,7 +16,7 @@ spec:
   upgrade:
     command: ["/bin/sh", "-c"]
     args:
-      - "rm -f /host/home/me/.local/bin/k3s && cp /opt/k3s /host/home/me/.local/bin/k3s && kill -9 1"
+      - "rm -f /host/home/me/.local/bin/k3s && cp /opt/k3s /host/home/me/.local/bin/k3s && rm -rf /host/home/me/.rancher/k3s/data && kill -9 1"
     envs:
       - name: SYSTEM_UPGRADE_K3S_STATE_DIR
         value: /home/me/.rancher/k3s
