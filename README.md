@@ -31,13 +31,12 @@ sudo systemctl enable --now hd-idle
 sudo apt install --yes fuse3 slirp4netns uidmap
 
 # Download k3s binary and make it executable
-mkdir -p ~/.local/bin
-curl -Lo ~/.local/bin/k3s https://github.com/k3s-io/k3s/releases/download/v1.30.0+k3s1/k3s
-chmod a+x ~/.local/bin/k3s
+sudo curl -Lo /usr/local/bin/k3s https://github.com/k3s-io/k3s/releases/download/v1.30.0+k3s1/k3s
+sudo chmod a+x /usr/local/bin/k3s
 
 # Create rootless service for local user
 mkdir -p ~/.config/systemd/user
-curl https://raw.githubusercontent.com/k3s-io/k3s/master/k3s-rootless.service | sed "s|/usr/local/bin/k3s|$HOME/.local/bin/k3s|g" > ~/.config/systemd/user/k3s-rootless.service
+curl https://raw.githubusercontent.com/k3s-io/k3s/master/k3s-rootless.service > ~/.config/systemd/user/k3s-rootless.service
 
 # Add delegate service to allow users resource permissions
 sudo mkdir -p /etc/systemd/system/user@.service.d
