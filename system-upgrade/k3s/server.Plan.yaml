@@ -18,4 +18,4 @@ spec:
       - name: SYSTEM_UPGRADE_K3S_STATE_DIR
         value: /home/me/.rancher/k3s
     image: rancher/k3s-upgrade@sha256:93052df228bab0ad56df1fd1591e56f526993a6b2ca2f1c4cf42626f70ad0a27
-  version: v1.36.3+k3s1
+  version: v1.36.4+k3s1
