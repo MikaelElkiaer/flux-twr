@@ -17,5 +17,5 @@ spec:
     envs:
       - name: SYSTEM_UPGRADE_K3S_STATE_DIR
         value: /home/me/.rancher/k3s
-    image: rancher/k3s-upgrade@sha256:fd8fc072b6b3804f52170a7ee366513b705f2006faffdbd7b0cec1293063f041
+    image: rancher/k3s-upgrade@sha256:93052df228bab0ad56df1fd1591e56f526993a6b2ca2f1c4cf42626f70ad0a27
   version: v1.36.3+k3s1
