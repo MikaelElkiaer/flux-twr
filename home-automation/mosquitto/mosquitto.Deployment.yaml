@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: mosquitto
-          image: docker.io/library/eclipse-mosquitto:2.0.22@sha256:212f89e1eaeb2c322d6441b64396e3346026674db8fa9c27beac293405c32b3c
+          image: docker.io/library/eclipse-mosquitto:2.0.22@sha256:05b5c328c11046613c4b8137b27021c15342c9fc90ae9c2f4750ed3ece5967bd
           resources:
             requests:
               cpu: "50m"
