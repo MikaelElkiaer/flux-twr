@@ -12,4 +12,5 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
+  suspend: true
   targetNamespace: system-upgrade
