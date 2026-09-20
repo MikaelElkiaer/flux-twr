@@ -44,18 +44,6 @@ spec:
         enabled: true
         entryPoints: ["web", "websecure"]
         matchRule: Host(`traefik.home.elkiaer.net`) && PathPrefix(`/dashboard`, `/api`)
-    logs:
-      access:
-        enabled: true
-        fields:
-          headers:
-            defaultmode: keep
-        filePath: /var/log/traefik/access.log
-        filters:
-          minduration: 1ms
-        format: json
-      general:
-        format: json
     metrics:
       prometheus:
         serviceMonitor:
