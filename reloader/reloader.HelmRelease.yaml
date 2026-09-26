@@ -14,3 +14,6 @@ spec:
         namespace: reloader
   values:
     fullnameOverride: reloader
+    reloader:
+      serviceMonitor:
+        enabled: true
