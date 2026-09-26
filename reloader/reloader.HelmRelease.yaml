@@ -16,4 +16,6 @@ spec:
     fullnameOverride: reloader
     reloader:
       serviceMonitor:
+        additionalLabels:
+          release: prom-stack
         enabled: true

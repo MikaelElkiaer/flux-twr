@@ -20,4 +20,6 @@ spec:
     groupName: elkiaer.net
     metrics:
       serviceMonitor:
+        additionalLabels:
+          release: prom-stack
         enabled: true

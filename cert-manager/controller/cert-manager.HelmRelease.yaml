@@ -18,4 +18,6 @@ spec:
     installCRDs: true
     prometheus:
       servicemonitor:
+        additionalLabels:
+          release: prom-stack
         enabled: true
