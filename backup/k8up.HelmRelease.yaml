@@ -39,6 +39,8 @@ spec:
               key: accessKeySecret
     metrics:
       prometheusRule:
+        additionalLabels:
+          release: prom-stack
         enabled: true
       serviceMonitor:
         additionalLabels:
