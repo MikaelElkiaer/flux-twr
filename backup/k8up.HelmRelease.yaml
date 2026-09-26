@@ -38,6 +38,8 @@ spec:
               name: s3-credentials
               key: accessKeySecret
     metrics:
+      prometheusRule:
+        enabled: true
       serviceMonitor:
         additionalLabels:
           release: prom-stack
