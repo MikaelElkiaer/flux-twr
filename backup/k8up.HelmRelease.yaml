@@ -37,3 +37,6 @@ spec:
             secretKeyRef:
               name: s3-credentials
               key: accessKeySecret
+    metrics:
+      serviceMonitor:
+        enabled: true
