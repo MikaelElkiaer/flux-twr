@@ -6,7 +6,7 @@ metadata:
   name: cert-manager-rule
 spec:
   groups:
-    - name: EmbeddedExporter
+    - name: cert-manager
       rules:
         # Replace job="cert-manager" with the actual job name in your Prometheus configuration.
         - alert: Cert-managerAbsent
