@@ -4,6 +4,8 @@ metadata:
   name: cert-manager-controller
   namespace: flux-system
 spec:
+  dependsOn:
+    - name: monitoring
   interval: 10m
   path: ./cert-manager/controller
   prune: true
