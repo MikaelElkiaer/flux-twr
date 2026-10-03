@@ -24,6 +24,15 @@
       "matchStrings": ["version: (?<currentValue>.*)"],
       "depNameTemplate": "k3s-io/k3s",
       "datasourceTemplate": "github-releases"
+    },
+    {
+      "customType": "regex",
+      "managerFilePatterns": ["/^README\\.md$/"],
+      "matchStrings": [
+        "https://github\\.com/k3s-io/k3s/releases/download/(?<currentValue>[^/]+)/k3s"
+      ],
+      "depNameTemplate": "k3s-io/k3s",
+      "datasourceTemplate": "github-releases"
     }
   ]
 }
