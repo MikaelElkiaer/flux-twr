@@ -28,19 +28,21 @@ spec:
         fi
         echo "Found K3s PID: $K3S_PID"
 
-        # 2. Extract host binary path from /proc (container procfs, NOT /host/proc)
+        # 2. Extract host binary path
         K3S_BIN_PATH=$(tr '\0' '\n' < "/proc/${K3S_PID}/cmdline" | head -n 1)
-        FULL_BIN_PATH="/host${K3S_BIN_PATH}"
-        if [ ! -f "$FULL_BIN_PATH" ]; then
-          RESOLVED=$(readlink -f "/proc/${K3S_PID}/exe" 2>/dev/null || true)
-          if [ -n "$RESOLVED" ] && [ -f "/host${RESOLVED}" ]; then
-            FULL_BIN_PATH="/host${RESOLVED}"
-          elif [ -f "/host/usr/local/bin/k3s" ]; then
-            FULL_BIN_PATH="/host/usr/local/bin/k3s"
-          fi
+        FULL_BIN_PATH=""
+        if [ -n "$K3S_BIN_PATH" ] && [ -f "/host${K3S_BIN_PATH}" ]; then
+          FULL_BIN_PATH="/host${K3S_BIN_PATH}"
+        else
+          for candidate in /host/home/*/.local/bin/k3s /host/usr/local/bin/k3s /host/usr/bin/k3s; do
+            if [ -f "$candidate" ]; then
+              FULL_BIN_PATH="$candidate"
+              break
+            fi
+          done
         fi
-        if [ ! -f "$FULL_BIN_PATH" ]; then
-          echo "Error: Could not locate k3s binary on host at $FULL_BIN_PATH" >&2
+        if [ -z "$FULL_BIN_PATH" ] || [ ! -f "$FULL_BIN_PATH" ]; then
+          echo "Error: Could not locate k3s binary on host" >&2
           exit 1
         fi
         echo "Target host binary path: $FULL_BIN_PATH"
