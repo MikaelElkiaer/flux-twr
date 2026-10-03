@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: system-upgrade-ksm
+  namespace: system-upgrade
+  labels:
+    app.kubernetes.io/name: system-upgrade-ksm
+spec:
+  ports:
+    - name: http
+      port: 8080
+      targetPort: http
+  selector:
+    app.kubernetes.io/name: system-upgrade-ksm

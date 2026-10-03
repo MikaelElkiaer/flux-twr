@@ -1,0 +1,31 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: system-upgrade-ksm-config
+  namespace: system-upgrade
+data:
+  config.yaml: |
+    spec:
+      resources:
+        - groupVersionKind:
+            group: upgrade.cattle.io
+            version: v1
+            kind: Plan
+          metricNamePrefix: system_upgrade
+          metrics:
+            - name: "plan_info"
+              help: "The current status of a System Upgrade Plan."
+              each:
+                type: Info
+                info:
+                  labelsFromPath:
+                    name: [ metadata, name ]
+                    latest_version: [ status, latestVersion ]
+                    latest_hash: [ status, latestHash ]
+              labelsFromPath:
+                exported_namespace: [ metadata, namespace ]
+                complete: [ status, conditions, "[type=Complete]", status ]
+                complete_reason: [ status, conditions, "[type=Complete]", reason ]
+                resolved: [ status, conditions, "[type=LatestResolved]", status ]
+                validated: [ status, conditions, "[type=SpecValidated]", status ]

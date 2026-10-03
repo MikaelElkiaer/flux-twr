@@ -1,0 +1,36 @@
+---
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: system-upgrade-rule
+  namespace: system-upgrade
+  labels:
+    release: prom-stack
+spec:
+  groups:
+    - name: system-upgrade
+      rules:
+        - alert: SystemUpgradeJobFailed
+          expr: system_upgrade_plan_info{complete="False", complete_reason="JobFailed"} > 0
+          for: 5m
+          labels:
+            severity: critical
+          annotations:
+            summary: "K3s Upgrade Plan {{ $labels.name }} failed"
+            description: "The upgrade Plan '{{ $labels.name }}' in namespace '{{ $labels.exported_namespace }}' has failed. Check Job and pod logs in namespace '{{ $labels.exported_namespace }}'."
+        - alert: SystemUpgradeStuck
+          expr: system_upgrade_plan_info{complete="False"} > 0
+          for: 30m
+          labels:
+            severity: warning
+          annotations:
+            summary: "K3s Upgrade Plan {{ $labels.name }} stuck in progress"
+            description: "The upgrade Plan '{{ $labels.name }}' has been incomplete for more than 30 minutes. Node may be cordoned."
+        - alert: SystemUpgradePlanUnresolvable
+          expr: system_upgrade_plan_info{resolved="False"} > 0 or system_upgrade_plan_info{validated="False"} > 0
+          for: 15m
+          labels:
+            severity: warning
+          annotations:
+            summary: "K3s Upgrade Plan {{ $labels.name }} spec or resolution error"
+            description: "System Upgrade Controller cannot validate or resolve Plan '{{ $labels.name }}'."
