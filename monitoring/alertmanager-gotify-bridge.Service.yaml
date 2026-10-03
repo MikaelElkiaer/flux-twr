@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: alertmanager-gotify-bridge
+  namespace: monitoring
+  labels:
+    app.kubernetes.io/name: alertmanager-gotify-bridge
+spec:
+  ports:
+    - name: http
+      port: 8080
+      targetPort: http
+  selector:
+    app.kubernetes.io/name: alertmanager-gotify-bridge
