@@ -32,7 +32,7 @@ sudo apt install --yes fuse3 slirp4netns uidmap
 
 # Download k3s binary and make it executable in user directory
 mkdir -p ~/.local/bin
-curl -Lo ~/.local/bin/k3s https://github.com/k3s-io/k3s/releases/download/v1.37.0+k3s1/k3s
+curl -Lo ~/.local/bin/k3s https://github.com/k3s-io/k3s/releases/download/v1.37.1+k3s1/k3s
 chmod a+x ~/.local/bin/k3s
 
 # Create rootless service for local user

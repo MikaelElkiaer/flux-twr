@@ -14,7 +14,7 @@ spec:
           - "true"
   serviceAccountName: system-upgrade
   upgrade:
-    image: rancher/k3s-upgrade@sha256:7f2bb245bf1fcbadb2c35fe0206f383a0a71461944841ffebc6f368a4f8e46fb
+    image: rancher/k3s-upgrade
     command: ["/bin/sh", "-xe", "-c"]
     args:
       - |
@@ -64,4 +64,4 @@ spec:
         # 5. Signal K3s to stop; systemd --user will restart it with the new binary
         kill -SIGTERM "$K3S_PID"
         echo "Sent SIGTERM to K3s PID $K3S_PID."
-  version: v1.37.0+k3s1
+  version: v1.37.1+k3s1

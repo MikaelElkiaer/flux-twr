@@ -14,7 +14,8 @@
       "/\\.yaml$/"
     ],
     "ignorePaths": [
-      "bootstrap/**"
+      "bootstrap/**",
+      "system-upgrade/k3s/**"
     ]
   },
   "customManagers": [
