@@ -64,4 +64,4 @@ spec:
         # 5. Signal K3s to stop; systemd --user will restart it with the new binary
         kill -SIGTERM "$K3S_PID"
         echo "Sent SIGTERM to K3s PID $K3S_PID."
-  version: v1.37.0+k3s1
+  version: v1.37.1+k3s1
