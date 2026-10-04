@@ -13,6 +13,7 @@ kube-state-metrics:
           - helm.toolkit.fluxcd.io
           - notification.toolkit.fluxcd.io
           - image.toolkit.fluxcd.io
+          - upgrade.cattle.io
         resources:
           - gitrepositories
           - buckets
@@ -27,6 +28,7 @@ kube-state-metrics:
           - imagerepositories
           - imagepolicies
           - imageupdateautomations
+          - plans
         verbs: [ "list", "watch" ]
   customResourceState:
     enabled: true
@@ -275,3 +277,24 @@ kube-state-metrics:
                   ready: [ status, conditions, "[type=Ready]", status ]
                   suspended: [ spec, suspend ]
                   source_name: [ spec, sourceRef, name ]
+          - groupVersionKind:
+              group: upgrade.cattle.io
+              version: v1
+              kind: Plan
+            metricNamePrefix: system_upgrade
+            metrics:
+              - name: "plan_info"
+                help: "The current status of a System Upgrade Plan."
+                each:
+                  type: Info
+                  info:
+                    labelsFromPath:
+                      name: [ metadata, name ]
+                      latest_version: [ status, latestVersion ]
+                      latest_hash: [ status, latestHash ]
+                labelsFromPath:
+                  exported_namespace: [ metadata, namespace ]
+                  complete: [ status, conditions, "[type=Complete]", status ]
+                  complete_reason: [ status, conditions, "[type=Complete]", reason ]
+                  resolved: [ status, conditions, "[type=LatestResolved]", status ]
+                  validated: [ status, conditions, "[type=SpecValidated]", status ]
