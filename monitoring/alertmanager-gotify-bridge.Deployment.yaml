@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: bridge
-          image: druggeri/alertmanager_gotify_bridge:latest
+          image: druggeri/alertmanager_gotify_bridge:latest@sha256:242441023c6a7956fc7bcdd30350a8fed38f791e703d670aa286fc0465f88b41
           env:
             - name: GOTIFY_ENDPOINT
               value: "http://gotify.gotify.svc.cluster.local:8080/message"
