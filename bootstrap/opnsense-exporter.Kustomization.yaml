@@ -1,0 +1,17 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: opnsense-exporter
+  namespace: flux-system
+spec:
+  dependsOn:
+    - name: external-secrets-config
+    - name: monitoring
+  interval: 10m
+  path: ./opnsense-exporter
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  targetNamespace: opnsense-exporter
+  wait: true
