@@ -24,7 +24,7 @@ spec:
               containerPort: 80
           volumeMounts:
             - name: gotify-data
-              mountPath: /var/gotify/data
+              mountPath: /app/data
           livenessProbe:
             tcpSocket:
               port: 80
