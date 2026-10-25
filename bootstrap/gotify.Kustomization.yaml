@@ -6,6 +6,7 @@ metadata:
 spec:
   dependsOn:
     - name: cert-manager-controller
+    - name: external-secrets-config
     - name: k8up
   interval: 10m
   path: ./gotify

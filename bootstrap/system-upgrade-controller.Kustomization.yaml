@@ -4,6 +4,8 @@ metadata:
   name: system-upgrade-controller
   namespace: flux-system
 spec:
+  dependsOn:
+    - name: monitoring
   interval: 10m
   path: ./system-upgrade/controller
   prune: true
