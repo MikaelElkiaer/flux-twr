@@ -70,9 +70,9 @@ spec:
             - 10.41.0.0/16
             - 10.42.0.0/16
     service:
-      externalIPs:
-        - 192.168.1.154
       spec:
+        externalIPs:
+          - 192.168.1.154
         externalTrafficPolicy: Local
     tlsStore:
       default:
